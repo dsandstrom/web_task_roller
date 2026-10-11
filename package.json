@@ -1,10 +1,13 @@
 {
   "name": "web_task_roller",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {},
-  "version": "0.1.0",
   "devDependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.105.1"
   },
-  "scripts": {}
+  "scripts": {
+    "build:css": "sass --load-path=node_modules --load-path=vendor/assets/stylesheets --style compressed ./assets/stylesheets/application.sass.scss:./public/assets/application.css"
+  }
 }
