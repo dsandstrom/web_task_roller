@@ -1,6 +1,6 @@
 require_relative "helpers/layout_helper"
 
-class WebTaskRoller < Sinatra::Base
+class WebTaskRoller < Sinatra::Application
   helpers LayoutHelper
 
   get "/" do
