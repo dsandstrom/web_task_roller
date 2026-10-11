@@ -1,9 +1,7 @@
 require_relative "helpers/layout_helper"
 
 class WebTaskRoller < Sinatra::Base
-  helpers do
-    include LayoutHelper
-  end
+  helpers LayoutHelper
 
   get "/" do
     erb :index
