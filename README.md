@@ -1,6 +1,6 @@
 # Website for TaskRoller App
 
-Website using the Sinatra framework for the [App](https://github.com/dsandstrom/task_roller)
+Uses the Sinatra framework to display information about [TaskRoller](https://github.com/dsandstrom/task_roller)
 
 ## Local Setup
 
