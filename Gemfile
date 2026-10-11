@@ -7,3 +7,7 @@ gem "puma", "~> 8.0.2"
 gem "rackup", "~> 2.3.1"
 
 gem "sinatra", "~> 4.2.1"
+
+group :development do
+  gem "rubocop", "~> 1.92.0"
+end
