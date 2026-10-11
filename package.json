@@ -1,0 +1,10 @@
+{
+  "name": "web_task_roller",
+  "private": true,
+  "dependencies": {},
+  "version": "0.1.0",
+  "devDependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "scripts": {}
+}
