@@ -43,7 +43,8 @@ yarn-debug.log*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
-/public/assets/*
+/app/public/assets/*
+!/app/public/assets/.keep
 
 .DS_Store
 

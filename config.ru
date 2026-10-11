@@ -3,12 +3,10 @@ require "bundler"
 
 Bundler.require
 
-require_relative "app"
+require_relative "app/app"
 
-puma_options = {
-  Host: "0.0.0.0",
-  Port: 4567
-}
+configure do
+  set :app_file, 'app/app'
+end
 
-handler = Rackup::Handler.get("puma")
-handler.run(WebTaskRoller, **puma_options)
+WebTaskRoller.run!

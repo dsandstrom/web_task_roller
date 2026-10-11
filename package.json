@@ -8,6 +8,6 @@
     "sass": "^1.105.1"
   },
   "scripts": {
-    "build:css": "sass --load-path=node_modules --load-path=vendor/assets/stylesheets --style compressed ./assets/stylesheets/application.sass.scss:./public/assets/application.css"
+    "build:css": "sass --load-path=node_modules --load-path=vendor/assets/stylesheets --style compressed ./app/assets/stylesheets/application.sass.scss:./app/public/assets/application.css"
   }
 }
