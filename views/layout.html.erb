@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/application.css">
   <title><%= page_title %></title>
 </head>
 <body>
   <header>
-    <%= erb :_main_nav %>
+    <%= erb :_header %>
   </header>
-
   <main>
     <%= yield %>
   </main>
+  <footer>
+    <%= erb :_footer %>
+  </footer>
 </body>
 </html>
