@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Issue tracking app with the added ability to assign Tasks to address your projects' bugs and feature requests">
+  <style>html{visibility: hidden;opacity:0;</style>
   <link rel="stylesheet" href="assets/application.css">
   <script src="assets/application.js"></script>
 </head>
@@ -14,7 +15,9 @@
     <%= erb :_header %>
   </header>
   <main class="body-main">
-    <%= yield %>
+    <div class="page">
+      <%= yield %>
+    </div>
   </main>
   <footer class="body-footer">
     <%= erb :_footer %>
