@@ -27,7 +27,7 @@ body {
   padding-top: 2rem;
 }
 
-.body-header {
+.top-bar {
   padding: 1rem 0;
   background: $color-quaternary;
   color: $ink;
@@ -88,44 +88,44 @@ body {
 //   }
 // }
 
-// .page-header {
-//   padding: 1rem 0 0;
-//   border-bottom: 2px solid $light-gray;
-//
-//   .page-nav {
-//     display: flex;
-//     margin: 0 0 -2px;
-//
-//     a {
-//       display: block;
-//       padding: 0 1rem;
-//       border-bottom: 2px solid transparent;
-//       color: $dark-gray;
-//       font-size: 1.2rem;
-//       font-weight: bold;
-//       line-height: 3;
-//       text-transform: uppercase;
-//       white-space: nowrap;
-//
-//       &.current-page {
-//         border-color: $color-quinary;
-//         color: $color-quinary;
-//       }
-//     }
-//
-//     a:not(.current-page) {
-//       &:hover,
-//       &:focus {
-//         border-color: $color-secondary;
-//         color: $color-secondary;
-//       }
-//     }
-//   }
-//
-//   .second-column {
-//     text-align: right;
-//   }
-// }
+.page-header {
+  padding: 1rem 0 0;
+  border-bottom: 2px solid $light-gray;
+
+  .page-nav {
+    display: flex;
+    margin: 0 0 -2px;
+
+    a {
+      display: block;
+      padding: 0 1rem;
+      border-bottom: 2px solid transparent;
+      color: $dark-gray;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 3;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      &.current-page {
+        border-color: $color-quinary;
+        color: $color-quinary;
+      }
+    }
+
+    a:not(.current-page) {
+      &:hover,
+      &:focus {
+        border-color: $color-secondary;
+        color: $color-secondary;
+      }
+    }
+  }
+
+  // .second-column {
+  //   text-align: right;
+  // }
+}
 
 .menu {
   display: flex;
@@ -195,7 +195,7 @@ body {
 }
 
 @include breakpoints.gt-medium {
-  .body-header > .page {
+  .top-bar > .page {
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
@@ -207,12 +207,12 @@ body {
     margin: 0 1rem 0 0;
   }
 
-  .body-header {
-    .user-name {
-      flex-grow: 0;
-      margin-left: auto;
-    }
-  }
+  // .top-bar {
+  //   .user-name {
+  //     flex-grow: 0;
+  //     margin-left: auto;
+  //   }
+  // }
 }
 
 .body-footer {
