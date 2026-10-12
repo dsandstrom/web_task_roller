@@ -3,6 +3,7 @@
 @use "mixins/breakpoints" as breakpoints;
 
 @import "partials/colors";
+@import "partials/sizes";
+@import "partials/milligram";
 @import "partials/typography";
-
-// @import "partials/layout";
+@import "partials/layout";

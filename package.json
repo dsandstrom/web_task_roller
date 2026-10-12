@@ -5,6 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "esbuild": "^0.28.2",
+    "milligram": "^1.4.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.105.1",
     "stylelint": "^17.16.0",
