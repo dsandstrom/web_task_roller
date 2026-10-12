@@ -12,7 +12,7 @@ form {
   }
 }
 
-// scss-lint:disable QualifyingElement
+// stylelint-disable selector-no-qualifying-type
 input[type='email'],
 input[type='number'],
 input[type='password'],
@@ -40,7 +40,7 @@ input[type='submit'],
 .button {
   border-radius: $border-radius;
 }
-// scss-lint:enable QualifyingElement
+// stylelint-enable selector-no-qualifying-type
 
 label {
   &.hide {
@@ -99,7 +99,7 @@ label {
       border-color: $color-warning;
     }
 
-    // scss-lint:disable SelectorFormat
+    // stylelint-disable selector-class-pattern
     .CodeMirror {
       border-color: $color-warning;
     }
@@ -107,12 +107,13 @@ label {
     .CodeMirror-placeholder {
       color: $color-warning;
     }
-    // scss-lint:enable SelectorFormat
+    // stylelint-enable selector-class-pattern
   }
 }
 
 // Rails form error
-.field_with_errors { // scss-lint:disable SelectorFormat
+// stylelint-disable selector-class-pattern
+.field_with_errors {
   label {
     color: $color-warning;
   }
@@ -121,6 +122,7 @@ label {
     border-color: $color-warning;
   }
 }
+// stylelint-enable selector-class-pattern
 
 .error-card {
   margin-bottom: 2rem;
