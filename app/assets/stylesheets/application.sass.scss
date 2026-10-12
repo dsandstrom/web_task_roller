@@ -1,1 +1,8 @@
 @use 'normalize.css/normalize.css';
+
+@use "mixins/breakpoints" as breakpoints;
+
+@import "partials/colors";
+@import "partials/typography";
+
+// @import "partials/layout";

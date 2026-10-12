@@ -1,0 +1,36 @@
+// https://dev.to/alberto/defining-responsive-breakpoints-made-easy-with-sass-mixins-26p0
+
+$small-width: '600px';
+$md-width: '960px';
+$large-width: '1280px';
+$xlarge-width: '1920px';
+
+// @mixin gt-xsmall() {
+//   @media screen and (min-width: $small-width) {
+//     @content();
+//   }
+// }
+
+// @mixin gt-small() {
+//   @media screen and (min-width: $md-width) {
+//     @content();
+//   }
+// }
+
+// @mixin gt-medium() {
+//   @media screen and (min-width: $large-width) {
+//     @content();
+//   }
+// }
+
+// @mixin gt-large() {
+//   @media screen and (min-width: $xlarge-width) {
+//     @content();
+//   }
+// }
+
+@mixin lt-small() {
+  @media screen and (max-width: $small-width) {
+    @content();
+  }
+}
