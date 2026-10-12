@@ -8,5 +8,8 @@ gem "rackup", "~> 2.3.1"
 gem "sinatra", "~> 4.2.1"
 
 group :development do
-  gem "rubocop", "~> 1.92.0"
+  gem "rubocop", "~> 1.92.0", require: false
+  # Auto reload server after file changes
+  # https://github.com/alexch/rerun
+  gem "rerun", "~> 0.14.0"
 end
