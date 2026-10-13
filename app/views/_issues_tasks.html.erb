@@ -1,0 +1,40 @@
+<p>
+  The main components of the app are <strong>Issues</strong> and <strong>Tasks</strong>.
+  Issues are similar to GitHub issues. Anyone with access can use them to report bugs or
+  suggest improvements. On the other hand, tasks can only be created by
+  <strong>Reviewers</strong> or <strong>Admins</strong>. Often times, they are created
+  from an Issue. They lay out specific instructions on how to fix the Issues' bugs or
+  complete their new features. Tasks can also be added independently.
+</p>
+
+<h3>Type Configuration</h3>
+
+<p>
+  Issues and Tasks are grouped by <strong>types</strong> (eg. Bug, Feature Request,
+  Question). <strong>Admins</strong> have several color and icon options available in
+  order to customize their tags:
+</p>
+
+<h4>Color and Icon Options</h4>
+<div class="issue-tags">
+  <%= type_color_options %>
+</div>
+
+<h4>Icon Options</h4>
+<div class="issue-tags">
+  <%#= type_icon_options %>
+</div>
+
+<h4>Priority Levels</h4>
+<p>
+  Tasks have a priority level assigned to them that indicate the importance of the bug
+  fix, improvement, or new feature. The options are 1 to 4. Here is the quick guide
+  of the levels and how they can be used:
+</p>
+
+<ol>
+  <li><strong>Critical</strong> - Most likely tied to a bug that effects many users or clients</li>
+  <li><strong>High</strong> - An important bug fix or new improvement</li>
+  <li><strong>Medium</strong> - A new feature or improvement</li>
+  <li><strong>Low</strong> - A new feature or improvement that can wait</li>
+</ol>

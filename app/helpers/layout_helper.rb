@@ -31,4 +31,23 @@ module LayoutHelper
       </p>
     HTML
   end
+
+  def type_color_options
+    color_tags =
+      %w[default blue brown green purple red yellow].map do |color|
+        <<~HTML
+          <span class="issue-type-tag roller-type-color-#{color}">
+            <span>#{titleize(color)}</span>
+          </span>
+        HTML
+      end
+
+    color_tags.join
+  end
+
+  private
+
+    def titleize(word)
+      "#{word[0].upcase}#{word[1..]}"
+    end
 end
