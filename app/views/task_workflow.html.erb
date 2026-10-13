@@ -1,0 +1,45 @@
+<% content_for :page_header do %>
+  <h1>Workflows</h1>
+
+  <%= erb :_workflow_nav %>
+<% end %>
+
+<div class="columns">
+  <div class="first-column">
+    <div class="image-wrapper">
+      <img src='/images/task-workflow.svg'>
+    </div>
+  </div>
+
+  <div class="second-column">
+    <p>Tasks can have seven statuses:</p>
+    <dl>
+      <dt id="task-status-unasigned" class="color-green">Unassigned</dt>
+      <dd>
+        Tasks can be opened to address a specific issue or independently
+      </dd>
+
+      <dt id="task-status-assigned" class="color-blue">Assigned</dt>
+      <dd>One or more users were assigned to perform work</dd>
+
+      <dt id="task-status-in-progress" class="color-yellow">In Progress</dt>
+      <dd>An assigned user has started progress</dd>
+
+      <dt id="task-status-in-review" class="color-purple">In Review</dt>
+      <dd>An assigned user has put the Task up for review</dd>
+
+      <dt id="task-status-approved" class="color-red">Approved</dt>
+      <dd>
+        Task approved by a reviewer which closes it. If an Issue is connected, it is also
+        closed and has it's status set to
+        <a href="/workflows/issue#issue-status-addressed">Addressed</a>
+      </dd>
+
+      <dt id="task-status-duplicate" class="color-red">Duplicate</dt>
+      <dd>Closed because it's a duplicate of another</dd>
+
+      <dt id="task-status-closed" class="color-red">Closed</dt>
+      <dd>No longer required or invalid</dd>
+    </dl>
+  </div>
+</div>

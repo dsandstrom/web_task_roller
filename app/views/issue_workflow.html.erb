@@ -1,0 +1,48 @@
+<% content_for :page_header do %>
+  <h1>Workflows</h1>
+
+  <%= erb :_workflow_nav %>
+<% end %>
+
+<div class="columns">
+  <div class="first-column">
+    <div class="image-wrapper">
+      <img src='/images/issue-workflow.svg'>
+    </div>
+  </div>
+
+  <div class="second-column">
+    <p>Issues can have six statuses:</p>
+    <dl>
+      <dt id="issue-status-pending" class="color-green">Pending</dt>
+      <dd>
+        Issues can be opened to ask a question, bring up a problem, or to
+        simply group up tasks
+      </dd>
+
+      <dt id="issue-status-being-worked-on" class="color-yellow">
+        Being Worked On
+      </dt>
+      <dd>One or more tasks have been assigned to address the Issue</dd>
+
+      <dt id="issue-status-addressed" class="color-red">Addressed</dt>
+      <dd>The assigned tasks are complete which closes the Issue</dd>
+
+      <dt id="issue-status-resolved" class="color-red">Resolved</dt>
+      <dd>
+        The User that opened the Issue has acknowleged the question was
+        answered or no longer a problem
+      </dd>
+
+      <dt id="issue-status-duplicate" class="color-red">Duplicate</dt>
+      <dd>
+        Closed because it's a duplicate of another
+      </dd>
+
+      <dt id="issue-status-closed" class="color-red">Closed</dt>
+      <dd>
+        No longer required or invalid
+      </dd>
+    </dl>
+  </div>
+</div>

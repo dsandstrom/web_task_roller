@@ -8,4 +8,10 @@ module LayoutHelper
 
     "#{MAIN_TITLE} | #{@title}"
   end
+
+  def nav_link(title, path)
+    css_class = "current-page" if request.path == path
+
+    "<a class='#{css_class}' href='#{path}'>#{title}</a>"
+  end
 end
