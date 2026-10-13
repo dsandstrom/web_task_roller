@@ -1,10 +1,8 @@
 <% content_for :page_header do %>
   <h1>Features</h1>
 
-  <p class="page-nav">
-    <%= nav_link "Issue & Tasks", "/features#features-issues-tasks" %>
-    <%= nav_link "User Levels", "/features#features-user-levels" %>
-  </p>
+  <%= nav [["Issue & Tasks", "/features#features-issues-tasks"],
+           ["User Levels", "/features#features-user-levels"]] %>
 <% end %>
 
 <h2 id="issues-tasks">Issues and Tasks</h2>

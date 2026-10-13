@@ -1,5 +1,4 @@
-<div class="menu">
-  <%= nav_link "Features", "/features" %>
-  <%= nav_link "Workflows", "/workflows/issue", %r{\A/workflows/\w+} %>
-  <%= nav_link "About", "/about" %>
-</div>
+<%= nav [["Features", "/features"],
+         ["Workflows", "/workflows/issue", %r{\A/workflows/\w+}],
+         ["About", "/about"]],
+        "menu" %>

@@ -18,4 +18,17 @@ module LayoutHelper
 
     "<a class='#{css_class}' href='#{path}'>#{title}</a>"
   end
+
+  def nav(links, css_class = "page-nav")
+    nav_links =
+      links.map do |title, path, path_regex|
+        nav_link(title, path, path_regex)
+      end
+
+    <<~HTML
+      <p class="#{css_class}">
+        #{nav_links.join("\n")}
+      </p>
+    HTML
+  end
 end
