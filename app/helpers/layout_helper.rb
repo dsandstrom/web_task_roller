@@ -32,6 +32,14 @@ module LayoutHelper
     HTML
   end
 
+  def top_link
+    <<~HTML
+      <p class="align-right">
+        <a href="#top">^ Top</a>
+      </p>
+    HTML
+  end
+
   def type_color_options
     color_tags =
       %w[default blue brown green purple red yellow].map do |color|
