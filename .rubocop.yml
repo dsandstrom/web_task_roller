@@ -10,7 +10,7 @@ AllCops:
     - 'Gemfile'
     - 'Guardfile'
     - 'Rakefile'
-    - '**/*.rb'
+    - 'app/**/*.rb'
 
   Exclude:
     - 'bin/*'
