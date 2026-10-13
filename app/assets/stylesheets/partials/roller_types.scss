@@ -95,7 +95,7 @@ $tag-border-radius: 2 * $border-radius;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   padding: 0;
   border-radius: $tag-border-radius;
   color: $color-quaternary;
@@ -106,15 +106,15 @@ $tag-border-radius: 2 * $border-radius;
   span,
   i,
   .dropdown-link {
-    padding: .2rem .5rem;
+    padding: 0.2rem 0.5rem;
   }
 
   i {
     color: $color-quinary;
   }
 
-  [class^="icon-"],
-  [class*=" icon-"] {
+  [class^='icon-'],
+  [class*=' icon-'] {
     position: relative;
     bottom: -2px;
   }
