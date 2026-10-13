@@ -13,14 +13,9 @@ class WebTaskRoller < Sinatra::Application
     erb :index
   end
 
-  get "/workflows/issue" do
-    @title = "Issue Workflow"
-    erb :issue_workflow
-  end
-
-  get "/workflows/task" do
-    @title = "Task Workflow"
-    erb :task_workflow
+  get "/workflows" do
+    @title = "Status Workflows"
+    erb :workflows
   end
 
   get "/features" do

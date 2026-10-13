@@ -1,0 +1,22 @@
+<% content_for :page_header do %>
+  <h1>Workflows</h1>
+
+  <p>
+    Issues and Tasks have slightly different <strong>status</strong> options, but
+    their <strong>workflows</strong> can still be connected. See below for a
+    description of each option and a visualization of the workflows:
+  </p>
+
+  <%= nav [["Issue Status", "/workflows#issue-workflow"],
+           ["Task Status", "/workflows#task-workflow"]] %>
+<% end %>
+
+<h2 id="issue-workflow">Issue Status</h2>
+
+<%= erb :_issue_workflow %>
+
+<hr>
+
+<h2 id="task-workflow">Task Status</h2>
+
+<%= erb :_task_workflow %>
