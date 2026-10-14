@@ -3,6 +3,12 @@
 module LayoutHelper
   MAIN_TITLE = "Task Roller App"
 
+  TAG_ICONS =
+    %w[backspace bug bulb calendar cart fireball flask fork-repo gear globe
+       help image money network notifications options paintbucket plane
+       pull-request ribbon scissors settings share speakerphone stopwatch
+       textsms trophy umbrella].freeze
+
   def page_title
     return MAIN_TITLE if @title.nil?
 
@@ -59,10 +65,7 @@ module LayoutHelper
 
   def type_icon_options
     color_tags =
-      %w[backspace bug bulb calendar cart fireball flask fork-repo gear globe
-         help image money network notifications options paintbucket plane
-         pull-request ribbon scissors settings share speakerphone stopwatch
-         textsms trophy umbrella].map do |name|
+      TAG_ICONS.map do |name|
         <<~HTML
           <span class="issue-type-tag roller-type-color-default">
             <i class="icon-#{name}"></i>
@@ -77,12 +80,12 @@ module LayoutHelper
   private
 
     def titleize(word)
-      word = word.gsub(/-/, ' ')
+      word = word.gsub(/[-_]/, " ")
       parts = word.split(/\s+/)
       parts =
         parts.map do |part|
           "#{part[0].upcase}#{part[1..]}"
         end
-      parts.join(' ')
+      parts.join(" ")
     end
 end
