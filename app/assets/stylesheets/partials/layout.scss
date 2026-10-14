@@ -360,6 +360,17 @@ body {
   text-align: center;
 }
 
+.top-link-wrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    display: flex;
+    gap: 1px;
+    line-height: 1.2;
+  }
+}
+
 // .turbo-progress-bar {
 //   height: 4px;
 //   background-color: $color-secondary;

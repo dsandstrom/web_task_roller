@@ -32,10 +32,14 @@ module LayoutHelper
     HTML
   end
 
+  def icon(name)
+    "<i class=\"icon-#{name}\"></i>"
+  end
+
   def top_link
     <<~HTML
-      <p class="align-right">
-        <a href="#top">^ Top</a>
+      <p class="top-link-wrapper">
+        <a href="#top">#{icon('arrow-up')} Top</a>
       </p>
     HTML
   end
