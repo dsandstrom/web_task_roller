@@ -157,6 +157,13 @@ hr {
   color: $lavender;
 }
 
-.align-right {
-  text-align: right;
+.h3-image-heading {
+  img {
+    max-height: 2.2rem;
+    width: auto;
+  }
+}
+
+code {
+  color: $color-quinary;
 }
