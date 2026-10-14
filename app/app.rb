@@ -27,4 +27,9 @@ class WebTaskRoller < Sinatra::Application
     @title = "About"
     erb :about
   end
+
+  get "/contact" do
+    @title = "Contact"
+    erb :contact
+  end
 end
