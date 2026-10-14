@@ -57,9 +57,32 @@ module LayoutHelper
     color_tags.join
   end
 
+  def type_icon_options
+    color_tags =
+      %w[backspace bug bulb calendar cart fireball flask fork-repo gear globe
+         help image money network notifications options paintbucket plane
+         pull-request ribbon scissors settings share speakerphone stopwatch
+         textsms trophy umbrella].map do |name|
+        <<~HTML
+          <span class="issue-type-tag roller-type-color-default">
+            <i class="icon-#{name}"></i>
+            <span>#{titleize(name)}</span>
+          </span>
+        HTML
+      end
+
+    color_tags.join
+  end
+
   private
 
     def titleize(word)
-      "#{word[0].upcase}#{word[1..]}"
+      word = word.gsub(/-/, ' ')
+      parts = word.split(/\s+/)
+      parts =
+        parts.map do |part|
+          "#{part[0].upcase}#{part[1..]}"
+        end
+      parts.join(' ')
     end
 end

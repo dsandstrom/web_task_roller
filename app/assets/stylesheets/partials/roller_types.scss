@@ -1,116 +1,31 @@
 $tag-border-radius: 2 * $border-radius;
 
-// .issue-type-color-options,
-// .issue-type-icon-options,
-// .task-type-color-options,
-// .task-type-icon-options,
-// .issue-issue-type-options,
-// .task-task-type-options,
-// .issue-filter-options,
-// .task-filter-options,
-// .search-filter-options {
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin: 0 -.5rem;
-//
-//   label {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     margin: 0 .5rem 1rem;
-//     padding: .3rem .5rem;
-//     border-radius: $border-radius;
-//     line-height: 1.2;
-//     cursor: pointer;
-//
-//     &.disabled {
-//       border-color: $gray;
-//       opacity: .6;
-//       background-color: $light-gray;
-//       color: $color-quaternary;
-//
-//       i {
-//         color: $gray;
-//       }
-//     }
-//   }
-//
-//   i {
-//     display: flex;
-//     margin-right: .3rem;
-//     color: $color-quinary;
-//     font-weight: normal;
-//   }
-// }
-
-// .issue-type-color-options,
-// .task-type-color-options,
-// .task-task-type-options,
-// .issue-issue-type-options,
-// .issue-filter-options,
-// .task-filter-options,
-// .search-filter-options {
-//   margin-bottom: 1rem;
-//
-//   label {
-//     border-width: 1px;
-//     border-style: solid;
-//   }
-// }
-
-// .issue-type-icon-options,
-// .task-type-icon-options {
-//   label {
-//     border: 1px solid $light-gray;
-//     background-color: $off-white;
-//   }
-// }
-
-// .roller-radio-button-label {
-//   input {
-//     display: none;
-//   }
-//
-//   &.disabled {
-//     &:hover {
-//       opacity: .75;
-//     }
-//   }
-// }
-
 .issue-tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 0;
+
+  .issue-type-tag {
+    margin-bottom: 0.5rem;
+  }
 }
 
-.status-tag,
-.issue-type-tag,
-.task-assign-tag,
-.task-type-tag,
-.issue-type-icon-option,
-.task-type-icon-option {
+.issue-type-tag {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 0.5rem;
-  padding: 0;
+  padding: 0.2rem 0.5rem;
   border-radius: $tag-border-radius;
   color: $color-quaternary;
   font-size: 1.4rem;
   font-weight: bold;
   white-space: nowrap;
 
-  span,
-  i,
-  .dropdown-link {
-    padding: 0.2rem 0.5rem;
-  }
-
   i {
     color: $color-quinary;
+    margin-right: 0.5rem;
   }
 
   [class^='icon-'],
@@ -118,38 +33,9 @@ $tag-border-radius: 2 * $border-radius;
     position: relative;
     bottom: -2px;
   }
-
-  .type-value {
-    padding-left: 0;
-  }
-
-  // .dropdown-link {
-  //   border-right: 1px solid transparent;
-  //   border-left: 1px solid rgba($white, .2);
-  //   border-top-right-radius: $tag-border-radius;
-  //   border-bottom-right-radius: $tag-border-radius;
-  //
-  //   &::after {
-  //     color: $white;
-  //   }
-  //
-  //   &:hover,
-  //   &.active {
-  //     border-left-color: transparent;
-  //     background-color: rgba($black, .2);
-  //   }
-  //
-  //   i {
-  //     color: $white;
-  //   }
-  // }
 }
 
-.status-tag,
-.issue-type-tag,
-.task-assign-tag,
-.task-type-tag,
-.roller-radio-button-label {
+.issue-type-tag {
   &.roller-type-color-green,
   &.roller-type-color-yellow,
   &.roller-type-color-red,
@@ -196,192 +82,3 @@ $tag-border-radius: 2 * $border-radius;
     background-color: $yellow;
   }
 }
-
-.issue,
-.task {
-  .issue-type-tag,
-  .task-assign-tag,
-  .task-type-tag,
-  .status-tag,
-  .issue-status,
-  .task-status {
-    &.roller-type-color-default,
-    &.roller-type-color-blue,
-    &.roller-type-color-brown,
-    &.roller-type-color-green,
-    &.roller-type-color-yellow,
-    &.roller-type-color-red,
-    &.roller-type-color-purple {
-      i {
-        color: $gray;
-      }
-    }
-
-    &.roller-type-color-default {
-      color: $light-gray;
-    }
-
-    &.roller-type-color-blue {
-      color: $dark-blue;
-    }
-
-    &.roller-type-color-brown {
-      color: $brown;
-    }
-
-    &.roller-type-color-green {
-      color: $dark-green;
-    }
-
-    &.roller-type-color-purple {
-      color: $lavender;
-    }
-
-    &.roller-type-color-red {
-      color: $dark-red;
-    }
-
-    &.roller-type-color-yellow {
-      color: $dark-yellow;
-    }
-  }
-}
-
-// .task-type-icon,
-// .issue-type-icon {
-//   [class^="icon-"],
-//   [class*=" icon-"] {
-//     position: relative;
-//     bottom: -1px;
-//     font-weight: bold;
-//   }
-// }
-
-// .issue-type-icon,
-// .task-type-icon {
-//   &.roller-type-color-default {
-//     color: $light-gray;
-//   }
-//
-//   &.roller-type-color-blue {
-//     color: $light-blue;
-//   }
-//
-//   &.roller-type-color-brown {
-//     color: $light-brown;
-//   }
-//
-//   &.roller-type-color-green {
-//     color: $green;
-//   }
-//
-//   &.roller-type-color-purple {
-//     color: $lavender;
-//   }
-//
-//   &.roller-type-color-red {
-//     color: $red;
-//   }
-//
-//   &.roller-type-color-yellow {
-//     color: $yellow;
-//   }
-// }
-
-// .issue-types,
-// .task-types {
-//   margin-bottom: 2rem;
-//
-//   .issue-type-tag,
-//   .task-type-tag {
-//     margin: 0;
-//     padding: .5rem;
-//     border-radius: $tag-border-radius $tag-border-radius 0 0;
-//   }
-//
-//   .issue-type-header,
-//   .task-type-header {
-//     position: relative;
-//
-//     &:hover {
-//       cursor: move;
-//     }
-//
-//     .sortable-handle {
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       font-size: 2rem;
-//     }
-//   }
-//
-//   .issue-type-body,
-//   .task-type-body {
-//     line-height: 1.2;
-//     text-align: center;
-//   }
-//
-//   .issue-type,
-//   .task-type {
-//     margin-bottom: 1.5rem;
-//     border: 1px solid $border-color;
-//     border-radius: $tag-border-radius $tag-border-radius 0 0;
-//
-//     &.sortable-ghost {
-//       border: 1px dashed $gray;
-//     }
-//
-//     p {
-//       margin: 1rem .25rem;
-//     }
-//   }
-// }
-
-// @include breakpoint(medium up) {
-//   .issue-types,
-//   .task-types {
-//     display: grid;
-//     grid-gap: 1rem;
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-// @include breakpoint(large up) {
-//   .issue-types,
-//   .task-types {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//   }
-// }
-
-// a {
-//   &:hover,
-//   &:focus {
-//     .status-tag,
-//     .issue-type-tag,
-//     .task-type-tag,
-//     .issue-type-icon-option,
-//     .task-type-icon-option {
-//       opacity: .75;
-//     }
-//   }
-// }
-
-// .issue-button,
-// .task-button {
-//   .type-value,
-//   .status-value,
-//   .assign-value {
-//     border-right: 1px solid rgba($black, .2);
-//   }
-// }
-
-// .new-type-link {
-//   display: inline-block;
-//   padding: .2rem 0;
-//
-//   &.roller-type-color-default {
-//     &:hover {
-//       background-color: $off-white;
-//     }
-//   }
-// }
