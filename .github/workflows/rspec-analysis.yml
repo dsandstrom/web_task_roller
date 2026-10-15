@@ -1,0 +1,42 @@
+name: "RSpec"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+
+    # If running on a self-hosted runner, check it meets the requirements
+    # listed at https://github.com/ruby/setup-ruby#using-self-hosted-runners
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.4.10
+
+    - name: Setup Bundler cache
+      uses: actions/cache@v6
+      with:
+        path: vendor/bundle
+        key: bundle-use-ruby-${{ matrix.os }}-${{ matrix.ruby }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          bundle-use-ruby-${{ matrix.os }}-${{ matrix.ruby }}-
+
+    - name: Install gems with Bundler
+      run: |
+        bundle config deployment true
+        bundle config path vendor/bundle
+        bundle install --jobs 4
+
+    - name: Run RSpec
+      run: bin/bundle exec rspec spec/
