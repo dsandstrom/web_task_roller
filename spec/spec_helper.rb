@@ -109,7 +109,6 @@ RSpec.configure do |config|
 
     config.add_formatter RSpec::Github::Formatter
     config.profile_examples = false
-    config.filter_run_when_matching = false
   end
 
   config.include Rack::Test::Methods
