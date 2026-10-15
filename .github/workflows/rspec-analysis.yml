@@ -8,7 +8,7 @@ on:
       - 'releases/**'
 
 jobs:
-  rubocop:
+  rspec:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
