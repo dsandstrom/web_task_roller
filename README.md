@@ -47,3 +47,7 @@ Starts puma and asset compilation scripts
 ```sh
 bin/dev
 ```
+
+[![RSpec](https://github.com/dsandstrom/web_task_roller/actions/workflows/rspec-analysis.yml/badge.svg?branch=main&event=push)](https://github.com/dsandstrom/web_task_roller/actions/workflows/rspec-analysis.yml)
+
+[![Rubocop](https://github.com/dsandstrom/web_task_roller/actions/workflows/rubocop-analysis.yml/badge.svg?branch=main&event=push)](https://github.com/dsandstrom/web_task_roller/actions/workflows/rubocop-analysis.yml)
