@@ -15,7 +15,7 @@ class WebTaskRoller < Sinatra::Application
 
   get "/workflows" do
     @title = "Status Workflows"
-    erb :workflows
+    erb :workflowsx
   end
 
   get "/features" do
