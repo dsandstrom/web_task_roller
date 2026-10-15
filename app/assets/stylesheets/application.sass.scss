@@ -1,14 +1,14 @@
 @use 'normalize.css/normalize.css';
 
-@use "mixins/breakpoints" as breakpoints;
+@use 'mixins/breakpoints' as breakpoints;
 
-@import "partials/colors";
-@import "partials/sizes";
-@import "partials/milligram";
-@import "partials/typography";
-@import "partials/layout";
-@import "partials/roller_types";
+@import 'partials/colors';
+@import 'partials/sizes';
+@import 'partials/milligram';
+@import 'partials/typography';
+@import 'partials/layout';
+@import 'partials/roller_types';
 // @import "partials/buttons";
 // @import "partials/forms";
 
-@import "partials/fix_fouc";
+@import 'partials/fix_fouc';
