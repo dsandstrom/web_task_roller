@@ -103,5 +103,14 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 
+  # Use the GitHub Annotations formatter for CI
+  if ENV["GITHUB_ACTIONS"] == "true"
+    require "rspec/github"
+
+    config.add_formatter RSpec::Github::Formatter
+    config.profile_examples = false
+    config.filter_run_when_matching = false
+  end
+
   config.include Rack::Test::Methods
 end
