@@ -22,7 +22,7 @@ bundle install --without production
 ```
 
 #### Install Frontend Dependencies
-Install [yarn](https://github.com/yarnpkg/yarn) on your system. This step might
+Install [yarn](https://github.com/yarnpkg/berry) on your system. This step might
 also install Node.js, but please see below to ensure that you use the right
 version when working on the project.
 

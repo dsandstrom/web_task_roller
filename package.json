@@ -2,7 +2,6 @@
   "name": "web_task_roller",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "esbuild": "^0.28.2",
     "milligram": "^1.4.1",
@@ -16,5 +15,6 @@
     "build:css": "sass --load-path=node_modules --load-path=vendor/assets/stylesheets --style compressed ./app/assets/stylesheets/application.sass.scss:./app/public/assets/application.css ./app/assets/stylesheets/fontastic.sass.scss:./app/public/assets/fontastic.css",
     "build:js": "esbuild app/assets/javascript/application.js --bundle --format=esm --minify --outfile=app/public/assets/application.js",
     "lint:css": "stylelint app/assets/stylesheets/**/*.scss --config ./stylelint.config.js"
-  }
+  },
+  "packageManager": "yarn@4.18.1"
 }
