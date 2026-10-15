@@ -11,6 +11,7 @@ AllCops:
     - 'Guardfile'
     - 'Rakefile'
     - 'app/**/*.rb'
+    - 'spec/**/*.rb'
 
   Exclude:
     - 'bin/*'
