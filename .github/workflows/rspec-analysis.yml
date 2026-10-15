@@ -39,4 +39,4 @@ jobs:
         bundle install --jobs 4
 
     - name: Run RSpec
-      run: bin/bundle exec rspec spec/
+      run: bin/rspec spec/
