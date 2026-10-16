@@ -32,4 +32,15 @@ class WebTaskRoller < Sinatra::Application
     @title = "Contact"
     erb :contact
   end
+
+  get "/contact/success" do
+    @title = "Contact"
+    erb :contact_success
+  end
+
+  post "/contact" do
+    # TODO: validate input
+    # TODO: send email
+    redirect "/contact/success"
+  end
 end
