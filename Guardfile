@@ -15,7 +15,19 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-# Note: The cmd option is now required due to the increasing number of ways
+guard :bundler do
+  require "guard/bundler"
+  require "guard/bundler/verify"
+  helper = Guard::Bundler::Verify.new
+
+  files = ["Gemfile"]
+  files += Dir["*.gemspec"] if files.any? { |f| helper.uses_gemspec?(f) }
+
+  # Assume files are symlinked from somewhere
+  files.each { |file| watch(helper.real_path(file)) }
+end
+
+# NOTE: The cmd option is now required due to the increasing number of ways
 #       rspec may be run, below are examples of the most common uses.
 #  * bundler: 'bundle exec rspec'
 #  * bundler binstubs: 'bin/rspec'
@@ -41,7 +53,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   dsl.watch_spec_files_for(ruby.lib_files)
 
   # Rails files
-  rails = dsl.rails(view_extensions: %w(erb haml slim))
+  rails = dsl.rails(view_extensions: %w[erb haml slim])
   dsl.watch_spec_files_for(rails.app_files)
   # dsl.watch_spec_files_for(rails.views)
 
@@ -54,7 +66,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   # end
 
   # Rails config changes
-  watch(rails.spec_helper)     { rspec.spec_dir }
+  watch(rails.spec_helper) { rspec.spec_dir }
   # watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
   # watch(rails.app_controller)  { "#{rspec.spec_dir}/controllers" }
 
@@ -67,16 +79,4 @@ guard :rspec, cmd: "bundle exec rspec" do
   # watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
   #   Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
   # end
-end
-
-guard :bundler do
-  require 'guard/bundler'
-  require 'guard/bundler/verify'
-  helper = Guard::Bundler::Verify.new
-
-  files = ['Gemfile']
-  files += Dir['*.gemspec'] if files.any? { |f| helper.uses_gemspec?(f) }
-
-  # Assume files are symlinked from somewhere
-  files.each { |file| watch(helper.real_path(file)) }
 end
