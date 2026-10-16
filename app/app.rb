@@ -1,5 +1,6 @@
 require "sinatra/content_for"
 require_relative "helpers/layout_helper"
+require_relative "models/email_message"
 
 configure do
   set :app_file, "app/app"
