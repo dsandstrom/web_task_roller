@@ -9,6 +9,9 @@ gem "sinatra", "~> 4.2.1"
 gem "sinatra-contrib", "~> 4.2.1", require: false
 
 group :development do
+  gem "guard", "~> 2.20.2", require: false
+  gem 'guard-bundler', "~> 3.1.0", require: false
+  gem "guard-rspec", "~> 4.7.3", require: false
   # Auto reload server after file changes
   # https://github.com/alexch/rerun
   gem "rerun", "~> 0.14.0"
