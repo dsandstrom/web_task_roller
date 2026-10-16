@@ -11,11 +11,11 @@ $xlarge-width: '1920px';
 //   }
 // }
 
-// @mixin gt-small() {
-//   @media screen and (min-width: $md-width) {
-//     @content();
-//   }
-// }
+@mixin gt-small() {
+  @media screen and (min-width: $md-width) {
+    @content();
+  }
+}
 
 @mixin gt-medium() {
   @media screen and (min-width: $large-width) {
