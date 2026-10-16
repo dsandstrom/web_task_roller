@@ -137,6 +137,8 @@ GEM
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     shellany (0.0.1)
+    shoulda-matchers (8.0.1)
+      activesupport (>= 7.2)
     sinatra (4.2.1)
       logger (>= 1.6.0)
       mustermann (~> 3.0)
@@ -176,6 +178,7 @@ DEPENDENCIES
   rspec (~> 3.13.2)
   rspec-github (~> 3.0.0)
   rubocop (~> 1.92.0)
+  shoulda-matchers (~> 8.0.1)
   sinatra (~> 4.2.1)
   sinatra-contrib (~> 4.2.1)
 
@@ -241,6 +244,7 @@ CHECKSUMS
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   shellany (0.0.1) sha256=0e127a9132698766d7e752e82cdac8250b6adbd09e6c0a7fbbb6f61964fedee7
+  shoulda-matchers (8.0.1) sha256=5dbb46e5765b9da225111b085e0819e8c8a121ff94bba430a153eb1ea2c60288
   sinatra (4.2.1) sha256=b7aeb9b11d046b552972ade834f1f9be98b185fa8444480688e3627625377080
   sinatra-contrib (4.2.1) sha256=10d091c944d268aa910c618ea40a3c3ebe0533e6e32990d84af92235a3d26b4a
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
