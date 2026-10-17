@@ -45,8 +45,7 @@ yarn-debug.log*
 !.yarn/versions
 
 .env
-.env.*
-!.env.example
+.env.development.local
 
 /app/assets/builds/*
 !/app/assets/builds/.keep

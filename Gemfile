@@ -9,6 +9,10 @@ gem "rackup", "~> 2.3.1"
 gem "sinatra", "~> 4.2.1"
 gem "sinatra-contrib", "~> 4.2.1", require: false
 
+group :development, :test do
+  gem "dotenv", "~> 3.2.0", require: false
+end
+
 group :development do
   gem "guard", "~> 2.20.2", require: false
   gem "guard-bundler", "~> 3.1.0", require: false

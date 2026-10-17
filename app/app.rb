@@ -1,4 +1,13 @@
+if %w[test development].include?(ENV.fetch('RACK_ENV'))
+  require "dotenv"
+
+  Dotenv.load(".env.#{ENV.fetch('RACK_ENV')}.local",
+              ".env.#{ENV.fetch('RACK_ENV')}",
+              ".env")
+end
+
 require "sinatra/content_for"
+
 require_relative "helpers/layout_helper"
 require_relative "models/email_message"
 
