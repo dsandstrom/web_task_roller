@@ -1,4 +1,4 @@
-if %w[test development].include?(ENV.fetch('RACK_ENV'))
+if %w[test development].include?(ENV.fetch("RACK_ENV"))
   require "dotenv"
 
   Dotenv.load(".env.#{ENV.fetch('RACK_ENV')}.local",

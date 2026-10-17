@@ -1,6 +1,8 @@
 require "spec_helper"
 
 RSpec.describe EmailMessage, type: :model do
+  include Mail::Matchers
+
   before do
     @email_message = EmailMessage.new(name: "Luke",
                                       return_email: "luke@example.net",
@@ -41,6 +43,24 @@ RSpec.describe EmailMessage, type: :model do
               is_expected.to be_valid
             end
           end
+      end
+    end
+  end
+
+  describe "#deliver" do
+    context "when valid" do
+      it "sends an email" do
+        expect(subject.deliver).to eq(true)
+      end
+    end
+
+    context "when invalid" do
+      before do
+        subject.return_email = nil
+      end
+
+      it "doesn't send an email" do
+        expect(subject.deliver).to eq(false)
       end
     end
   end
