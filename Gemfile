@@ -4,6 +4,7 @@ ruby "3.4.10"
 
 gem "activemodel", "~> 8.1.4"
 gem "foreman", "~> 0.90.0"
+gem "mail", "~> 2.9.1"
 gem "puma", "~> 8.0.2"
 gem "rackup", "~> 2.3.1"
 gem "sinatra", "~> 4.2.1"
