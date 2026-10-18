@@ -7,18 +7,19 @@ class EmailMessage
   EMAIL_REGEX =
     %r{\A[a-z0-9_.!\-\#$%&'*+/=?^`{|}~]+@[a-z0-9][a-z0-9\-.]{1,62}[a-z0-9]\.[a-z]{1,20}\z}i
 
-  attr_accessor :name, :return_email, :message
+  attr_accessor :name, :return_email, :body
 
   validates :name, presence: true, length: { maximum: 150 }
   validates :return_email, presence: true, length: { maximum: 150 },
                            format: EMAIL_REGEX
-  validates :message, presence: true, length: { maximum: 1000 }
+  validates :body, presence: true, length: { maximum: 1000 }
 
-  def deliver
+  def deliver?
     return false unless valid?
     return true if ENV.fetch("RACK_ENV") == "test"
 
     delivery.deliver
+    true
   end
 
   private
@@ -30,7 +31,7 @@ class EmailMessage
       end
 
       mail["from"] = "#{name} <#{return_email}>"
-      mail["body"] = message
+      mail["body"] = body
 
       setup_delivery_method(mail)
       mail

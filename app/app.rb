@@ -8,8 +8,9 @@ end
 
 require "sinatra/content_for"
 
-require_relative "helpers/layout_helper"
 require_relative "models/email_message"
+require_relative "helpers/layout_helper"
+require_relative "helpers/forms_helper"
 
 configure do
   set :app_file, "app/app"
@@ -17,7 +18,7 @@ configure do
 end
 
 class WebTaskRoller < Sinatra::Application
-  helpers LayoutHelper
+  helpers LayoutHelper, FormsHelper
 
   get "/" do
     erb :index
@@ -40,6 +41,7 @@ class WebTaskRoller < Sinatra::Application
 
   get "/contact" do
     @title = "Contact"
+    @email_message = EmailMessage.new
     erb :contact
   end
 
@@ -49,8 +51,14 @@ class WebTaskRoller < Sinatra::Application
   end
 
   post "/contact" do
-    # TODO: validate input
-    # TODO: send email
-    redirect "/contact/success"
+    @email_message = EmailMessage.new(name: params[:contact][:name],
+                                      return_email: params[:contact][:return_email],
+                                      body: params[:contact][:body])
+
+    if @email_message.deliver?
+      redirect "/contact/success"
+    else
+      erb :contact
+    end
   end
 end

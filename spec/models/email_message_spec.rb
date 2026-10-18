@@ -6,7 +6,7 @@ RSpec.describe EmailMessage, type: :model do
   before do
     @email_message = EmailMessage.new(name: "Luke",
                                       return_email: "luke@example.net",
-                                      message: "Message")
+                                      body: "Message")
   end
 
   subject { @email_message }
@@ -18,11 +18,11 @@ RSpec.describe EmailMessage, type: :model do
     it { is_expected.to validate_length_of(:name).is_at_most(150) }
     it { is_expected.to validate_presence_of(:return_email) }
     it { is_expected.to validate_length_of(:return_email).is_at_most(150) }
-    it { is_expected.to validate_presence_of(:message) }
-    it { is_expected.to validate_length_of(:message).is_at_most(1000) }
+    it { is_expected.to validate_presence_of(:body) }
+    it { is_expected.to validate_length_of(:body).is_at_most(1000) }
 
     describe "for return_email format" do
-      context "when email is" do
+      context "when value is" do
         ["nope", "no pe@example.net", "nope@", "nope@example",
          "nope@exa ple.net", "nope@example", "nope@example.n t"]
           .each do |test_email|
@@ -34,7 +34,7 @@ RSpec.describe EmailMessage, type: :model do
           end
       end
 
-      context "when email is" do
+      context "when value is" do
         %w[yep@yep.yep yep_ye-p@exa-mple.ye yep123@exa.example yep123@exa.mp.le]
           .each do |test_email|
             it test_email do
@@ -47,10 +47,10 @@ RSpec.describe EmailMessage, type: :model do
     end
   end
 
-  describe "#deliver" do
+  describe "#deliver?" do
     context "when valid" do
       it "sends an email" do
-        expect(subject.deliver).to eq(true)
+        expect(subject.deliver?).to eq(true)
       end
     end
 
@@ -60,7 +60,7 @@ RSpec.describe EmailMessage, type: :model do
       end
 
       it "doesn't send an email" do
-        expect(subject.deliver).to eq(false)
+        expect(subject.deliver?).to eq(false)
       end
     end
   end

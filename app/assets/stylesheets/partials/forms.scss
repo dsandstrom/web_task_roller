@@ -21,6 +21,7 @@ textarea,
 select {
   border-radius: $border-radius;
   border-color: $gray;
+  background-color: $white;
 
   &:disabled {
     border-color: $light-gray;
@@ -105,29 +106,31 @@ textarea {
 // }
 // stylelint-enable selector-class-pattern
 
-// .error-card {
-//   margin-bottom: 2rem;
-//   border-radius: $border-radius;
-//   background: $pearl;
-//   color: $black;
-//
-//   .card-title {
-//     margin: 0;
-//     padding: 1rem;
-//     border-radius: $border-radius $border-radius 0 0;
-//     background: $color-warning;
-//     color: $white;
-//     line-height: 1.2;
-//   }
-//
-//   .card-body {
-//     padding: 2rem;
-//   }
-//
-//   ol {
-//     margin: 0 1rem;
-//   }
-// }
+.error-card {
+  margin-bottom: 2rem;
+  border-radius: $border-radius;
+  background: $pearl;
+  color: $black;
+
+  .card-title {
+    margin: 0;
+    padding: 1rem;
+    border-radius: $border-radius $border-radius 0 0;
+    background: $color-warning;
+    color: $white;
+    line-height: 1.2;
+  }
+
+  .card-body {
+    padding: 2rem;
+    border: 0 solid $color-warning;
+    border-width: 0 1px 1px;
+  }
+
+  ol {
+    margin: 0 1rem;
+  }
+}
 
 [multiple='multiple'] {
   height: auto;
@@ -137,16 +140,4 @@ textarea {
   padding: 2rem;
   border: 1px solid $border-color;
   background-color: $off-white;
-
-  // stylelint-disable selector-no-qualifying-type
-  input[type='text'],
-  input[type='email'],
-  textarea {
-    background: $pearl;
-
-    &:focus {
-      background: $white;
-    }
-  }
-  // stylelint-enable selector-no-qualifying-type
 }
