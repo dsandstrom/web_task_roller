@@ -40,6 +40,7 @@ class WebTaskRoller < Sinatra::Application
   end
 
   get "/contact" do
+    # TODO: add captcha if neccessary https://www.hcaptcha.com/
     @title = "Contact"
     @email_message = EmailMessage.new
     erb :contact
