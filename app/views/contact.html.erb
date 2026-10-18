@@ -24,6 +24,16 @@
                value="<%= @email_message.name %>">
       </div>
 
+      <div class="field hide">
+        <div class="field-label-and-message">
+          <label for="contact[title]">Title</label>
+          <span class=field-message></span>
+        </div>
+        <input type="text" name="contact[title]" id="contact_title"
+               tabindex="-1" autocomplete="off" aria-hidden="true"
+               value="<%= @email_message.title %>">
+      </div>
+
       <div class="field">
         <div class="field-label-and-message">
           <label for="contact[return_email]">Your Email</label>

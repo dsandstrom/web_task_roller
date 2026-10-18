@@ -11,6 +11,8 @@ RSpec.describe EmailMessage, type: :model do
 
   subject { @email_message }
 
+  it { is_expected.to respond_to(:title) }
+
   describe "validations" do
     it { is_expected.to be_valid }
 
@@ -48,8 +50,20 @@ RSpec.describe EmailMessage, type: :model do
   end
 
   describe "#deliver?" do
+    let(:mail) { double(:mail, "[]=": nil, delivery_method: nil, deliver: nil) }
+
+    before do
+      allow(Mail).to receive(:new) { mail }
+    end
+
     context "when valid" do
       it "sends an email" do
+        expect(mail).to receive(:deliver)
+
+        subject.deliver?
+      end
+
+      it "returns true" do
         expect(subject.deliver?).to eq(true)
       end
     end
@@ -60,7 +74,45 @@ RSpec.describe EmailMessage, type: :model do
       end
 
       it "doesn't send an email" do
+        expect(mail).not_to receive(:deliver)
+
+        subject.deliver?
+      end
+
+      it "returns false" do
         expect(subject.deliver?).to eq(false)
+      end
+    end
+
+    context "when title filled in" do
+      before do
+        subject.title = "something"
+      end
+
+      it "doesn't send an email" do
+        expect(mail).not_to receive(:deliver)
+
+        subject.deliver?
+      end
+
+      it "returns true" do
+        expect(subject.deliver?).to eq(true)
+      end
+    end
+
+    context "when title is an empty string" do
+      before do
+        subject.title = ""
+      end
+
+      it "sends an email" do
+        expect(mail).to receive(:deliver)
+
+        subject.deliver?
+      end
+
+      it "returns true" do
+        expect(subject.deliver?).to eq(true)
       end
     end
   end

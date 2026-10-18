@@ -7,7 +7,7 @@ class EmailMessage
   EMAIL_REGEX =
     %r{\A[a-z0-9_.!\-\#$%&'*+/=?^`{|}~]+@[a-z0-9][a-z0-9\-.]{1,62}[a-z0-9]\.[a-z]{1,20}\z}i
 
-  attr_accessor :name, :return_email, :body
+  attr_accessor :name, :return_email, :body, :title
 
   validates :name, presence: true, length: { maximum: 150 }
   validates :return_email, presence: true, length: { maximum: 150 },
@@ -16,7 +16,7 @@ class EmailMessage
 
   def deliver?
     return false unless valid?
-    return true if ENV.fetch("RACK_ENV") == "test"
+    return true unless blank?(title) # honeypot
 
     delivery.deliver
     true
@@ -46,5 +46,9 @@ class EmailMessage
                            password: ENV.fetch("EMAIL_PASSWORD"),
                            authentication: "plain",
                            enable_starttls_auto: true
+    end
+
+    def blank?(value)
+      value.nil? || value.empty?
     end
 end

@@ -41,11 +41,17 @@ RSpec.describe WebTaskRoller do
   end
 
   describe "POST /contact" do
+    let(:mail) { double(:mail, "[]=": nil, delivery_method: nil, deliver: nil) }
+
     let(:valid_params) do
       { name: "Name", return_email: "test@example.net", body: "Body" }
     end
 
     let(:invalid_params) { { name: "" } }
+
+    before do
+      allow(Mail).to receive(:new) { mail }
+    end
 
     context "with valid params" do
       it "redirects to /contact/success" do
