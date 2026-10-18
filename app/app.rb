@@ -51,19 +51,34 @@ class WebTaskRoller < Sinatra::Application
   end
 
   post "/contact" do
-    @email_message =
-      EmailMessage.new(name: params[:contact][:name],
-                       return_email: params[:contact][:return_email],
-                       body: params[:contact][:body],
-                       title: params[:contact][:title])
+    @email_message = EmailMessage.new(contact_message_params)
 
-    if @email_message.honeypot_activated?
-      logger.info "Honeypot activated for IP: #{request.ip}"
-      redirect "/contact/success"
-    elsif @email_message.deliver?
+    if prevent_delivery? || @email_message.deliver?
       redirect "/contact/success"
     else
       erb :contact
     end
   end
+
+  private
+
+    def contact_message_params
+      { name: params[:contact][:name],
+        return_email: params[:contact][:return_email],
+        body: params[:contact][:body],
+        title: params[:contact][:title],
+        loaded_at: params[:contact][:loaded_at] }
+    end
+
+    def prevent_delivery?
+      if @email_message.honeypot_activated?
+        logger.info "Contact form honeypot activated for IP: #{request.ip}"
+        return true
+      elsif @email_message.submitted_too_quickly?
+        logger.info "Contact form submitted too quickly for IP: #{request.ip}"
+        return true
+      end
+
+      false
+    end
 end

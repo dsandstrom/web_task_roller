@@ -6,7 +6,8 @@ RSpec.describe EmailMessage, type: :model do
   before do
     @email_message = EmailMessage.new(name: "Luke",
                                       return_email: "luke@example.net",
-                                      body: "Message")
+                                      body: "Message",
+                                      loaded_at: (Time.now.utc - 4).to_s)
   end
 
   subject { @email_message }
@@ -22,6 +23,7 @@ RSpec.describe EmailMessage, type: :model do
     it { is_expected.to validate_length_of(:return_email).is_at_most(150) }
     it { is_expected.to validate_presence_of(:body) }
     it { is_expected.to validate_length_of(:body).is_at_most(1000) }
+    it { is_expected.to validate_presence_of(:loaded_at) }
 
     describe "for return_email format" do
       context "when value is" do
@@ -113,6 +115,28 @@ RSpec.describe EmailMessage, type: :model do
 
       it "returns true" do
         expect(subject.honeypot_activated?).to eq(true)
+      end
+    end
+  end
+
+  describe "#submitted_too_quickly?" do
+    context "when loaded_at is too recent" do
+      before do
+        subject.loaded_at = Time.now.utc.to_s
+      end
+
+      it "returns true" do
+        expect(subject.submitted_too_quickly?).to eq(true)
+      end
+    end
+
+    context "when loaded_at is nil" do
+      before do
+        subject.loaded_at = nil
+      end
+
+      it "returns false" do
+        expect(subject.submitted_too_quickly?).to eq(false)
       end
     end
   end

@@ -7,12 +7,13 @@ class EmailMessage
   EMAIL_REGEX =
     %r{\A[a-z0-9_.!\-\#$%&'*+/=?^`{|}~]+@[a-z0-9][a-z0-9\-.]{1,62}[a-z0-9]\.[a-z]{1,20}\z}i
 
-  attr_accessor :name, :return_email, :body, :title
+  attr_accessor :name, :return_email, :body, :title, :loaded_at
 
   validates :name, presence: true, length: { maximum: 150 }
   validates :return_email, presence: true, length: { maximum: 150 },
                            format: EMAIL_REGEX
   validates :body, presence: true, length: { maximum: 1000 }
+  validates :loaded_at, presence: true
 
   def deliver?
     return false unless valid?
@@ -22,9 +23,16 @@ class EmailMessage
   end
 
   def honeypot_activated?
-    return false if blank?(title)
+    return true unless blank?(title)
 
-    true
+    false
+  end
+
+  def submitted_too_quickly?
+    return true unless blank?(loaded_at) ||
+                       (Time.now.utc - Time.parse(loaded_at) > 3)
+
+    false
   end
 
   private

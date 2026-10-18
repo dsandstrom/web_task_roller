@@ -15,6 +15,8 @@
     <%= form_errors @email_message %>
     <form id="contact-form" class="contact-form" name="contact_form" action="/contact"
           method="post" novalidate>
+      <input type="hidden" name="contact[loaded_at]" id="contact_loaded_at"
+             value="<%= Time.now.utc %>">
       <div class="field">
         <div class="field-label-and-message">
           <label for="contact[name]">Your Name</label>

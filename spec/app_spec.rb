@@ -44,7 +44,8 @@ RSpec.describe WebTaskRoller do
     let(:mail) { double(:mail, "[]=": nil, delivery_method: nil, deliver: nil) }
 
     let(:valid_params) do
-      { name: "Name", return_email: "test@example.net", body: "Body" }
+      { name: "Name", return_email: "test@example.net", body: "Body",
+        loaded_at: (Time.now.utc - 60).to_s }
     end
 
     let(:invalid_params) { { name: "" } }
