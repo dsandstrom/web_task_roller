@@ -25,6 +25,7 @@ group :development do
 end
 
 group :test do
+  gem "byebug", "~> 13.0.0"
   gem "rack-test", "~> 2.2.0"
   gem "rspec", "~> 3.13.2"
   gem "rspec-github", "~> 3.0.0", require: false

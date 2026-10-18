@@ -4,6 +4,7 @@ Bundler.require
 
 require "rack/test"
 require "shoulda-matchers"
+require "byebug"
 
 require_relative "../app/app"
 
