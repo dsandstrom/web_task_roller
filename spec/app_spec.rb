@@ -98,6 +98,42 @@ RSpec.describe WebTaskRoller do
         expect(last_response.location).to match("/contact/success")
       end
     end
+
+    context "with invalid config" do
+      before do
+        allow(mail).to receive(:deliver) { raise(Errno::ECONNREFUSED) }
+      end
+
+      it "sends an email" do
+        expect(mail).to receive(:deliver)
+
+        post "/contact", contact: valid_params
+      end
+
+      it "redirects to /contact/success" do
+        post "/contact", contact: valid_params
+        expect(last_response.status).to eq(302)
+        expect(last_response.location).to match("/contact/success")
+      end
+    end
+
+    context "with missing config" do
+      before do
+        allow(mail).to receive(:deliver) { raise(KeyError) }
+      end
+
+      it "sends an email" do
+        expect(mail).to receive(:deliver)
+
+        post "/contact", contact: valid_params
+      end
+
+      it "redirects to /contact/success" do
+        post "/contact", contact: valid_params
+        expect(last_response.status).to eq(302)
+        expect(last_response.location).to match("/contact/success")
+      end
+    end
   end
 
   describe "GET /contact_success" do

@@ -59,6 +59,9 @@ class WebTaskRoller < Sinatra::Application
     else
       erb :contact
     end
+  rescue Errno::ECONNREFUSED, KeyError => e
+    logger.info "Contact form has invalid configs: #{e}"
+    redirect "/contact/success"
   end
 
   private
