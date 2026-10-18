@@ -51,9 +51,10 @@ class WebTaskRoller < Sinatra::Application
   end
 
   post "/contact" do
-    @email_message = EmailMessage.new(name: params[:contact][:name],
-                                      return_email: params[:contact][:return_email],
-                                      body: params[:contact][:body])
+    @email_message =
+      EmailMessage.new(name: params[:contact][:name],
+                       return_email: params[:contact][:return_email],
+                       body: params[:contact][:body])
 
     if @email_message.deliver?
       redirect "/contact/success"

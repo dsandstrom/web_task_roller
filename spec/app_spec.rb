@@ -42,7 +42,7 @@ RSpec.describe WebTaskRoller do
 
   describe "POST /contact" do
     let(:valid_params) do
-      { name: "Name", email: "test@example.net", body: "Body" }
+      { name: "Name", return_email: "test@example.net", body: "Body" }
     end
 
     let(:invalid_params) { { name: "" } }
