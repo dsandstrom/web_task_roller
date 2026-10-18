@@ -16,9 +16,14 @@ class EmailMessage
 
   def deliver?
     return false unless valid?
-    return true unless blank?(title) # honeypot
 
     delivery.deliver
+    true
+  end
+
+  def honeypot_activated?
+    return false if blank?(title)
+
     true
   end
 

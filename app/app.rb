@@ -54,9 +54,13 @@ class WebTaskRoller < Sinatra::Application
     @email_message =
       EmailMessage.new(name: params[:contact][:name],
                        return_email: params[:contact][:return_email],
-                       body: params[:contact][:body])
+                       body: params[:contact][:body],
+                       title: params[:contact][:title])
 
-    if @email_message.deliver?
+    if @email_message.honeypot_activated?
+      logger.info "Honeypot activated for IP: #{request.ip}"
+      redirect "/contact/success"
+    elsif @email_message.deliver?
       redirect "/contact/success"
     else
       erb :contact

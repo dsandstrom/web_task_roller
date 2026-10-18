@@ -83,20 +83,16 @@ RSpec.describe EmailMessage, type: :model do
         expect(subject.deliver?).to eq(false)
       end
     end
+  end
 
-    context "when title filled in" do
+  describe "#honeypot_activated?" do
+    context "when title is nil" do
       before do
-        subject.title = "something"
+        subject.title = nil
       end
 
-      it "doesn't send an email" do
-        expect(mail).not_to receive(:deliver)
-
-        subject.deliver?
-      end
-
-      it "returns true" do
-        expect(subject.deliver?).to eq(true)
+      it "returns false" do
+        expect(subject.honeypot_activated?).to eq(false)
       end
     end
 
@@ -105,14 +101,18 @@ RSpec.describe EmailMessage, type: :model do
         subject.title = ""
       end
 
-      it "sends an email" do
-        expect(mail).to receive(:deliver)
+      it "returns false" do
+        expect(subject.honeypot_activated?).to eq(false)
+      end
+    end
 
-        subject.deliver?
+    context "when title filled in" do
+      before do
+        subject.title = "something"
       end
 
       it "returns true" do
-        expect(subject.deliver?).to eq(true)
+        expect(subject.honeypot_activated?).to eq(true)
       end
     end
   end
