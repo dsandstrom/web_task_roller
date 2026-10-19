@@ -7,28 +7,39 @@
            ["Editors", "/features#features-editors"]] %>
 <% end %>
 
-<h2 id="issues-tasks">Issues and Tasks</h2>
-<%= erb :_features_issues_tasks %>
+<div class="row row-odd">
+  <div class="page">
+    <h2 id="issues-tasks">Issues and Tasks</h2>
+    <%= erb :_features_issues_tasks %>
 
-<%= top_link %>
+    <%= top_link %>
+  </div>
+</div>
 
-<hr>
+<div class="row row-even">
+  <div class="page">
+    <h2 id="features-user-levels">User Levels</h2>
+    <%= erb :_features_user_levels %>
 
-<h2 id="features-user-levels">User Levels</h2>
-<%= erb :_features_user_levels %>
+    <%= top_link %>
+  </div>
+</div>
 
-<%= top_link %>
+<div class="row row-odd">
+  <div class="page">
+    <h2 id="features-integrations">Integrations</h2>
+    <%= erb :_features_integrations %>
 
-<hr>
+    <%= top_link %>
+  </div>
+</div>
 
-<h2 id="features-integrations">Integrations</h2>
-<%= erb :_features_integrations %>
 
-<%= top_link %>
+<div class="row row-even">
+  <div class="page">
+    <h2 id="features-editors">Markdown Editors</h2>
+    <%= erb :_features_editors %>
 
-<hr>
-
-<h2 id="features-editors">Markdown Editors</h2>
-<%= erb :_features_editors %>
-
-<%= top_link %>
+    <%= top_link %>
+  </div>
+</div>

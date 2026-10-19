@@ -11,16 +11,22 @@
            ["Task Status", "/workflows#task-workflow"]] %>
 <% end %>
 
-<h2 id="issue-workflow">Issue Status</h2>
+<div class="row row-odd">
+  <div class="page">
+    <h2 id="issue-workflow">Issue Status</h2>
 
-<%= erb :_workflows_issue %>
+    <%= erb :_workflows_issue %>
 
-<%= top_link %>
+    <%= top_link %>
+  </div>
+</div>
 
-<hr>
+<div class="row row-even">
+  <div class="page">
+    <h2 id="task-workflow">Task Status</h2>
 
-<h2 id="task-workflow">Task Status</h2>
+    <%= erb :_workflows_task %>
 
-<%= erb :_workflows_task %>
-
-<%= top_link %>
+    <%= top_link %>
+  </div>
+</div>

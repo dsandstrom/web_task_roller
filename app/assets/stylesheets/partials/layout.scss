@@ -24,6 +24,16 @@ a {
   color: $ink;
 }
 
+.row {
+  padding: 1.5rem 0 2rem;
+}
+
+.row-even {
+  background: $off-white;
+  border: 1px solid $light-gray;
+  border-width: 1px 0;
+}
+
 .page-header {
   padding: 1rem 0 0;
   border-bottom: 2px solid $light-gray;
@@ -141,7 +151,6 @@ a {
 }
 
 .body-footer {
-  margin-top: 3rem;
   padding: 1rem 0;
   background: $ink;
   color: $color-tertiary;

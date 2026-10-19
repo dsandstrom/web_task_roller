@@ -2,54 +2,58 @@
   <h1>About</h1>
 <% end %>
 
-<div class="columns">
-  <div class="second-column sidebar">
-    <div class="sidebar-container">
-      <h2>Developer</h2>
-      <div class="headshot-image-wrapper">
-        <div class="image">
-          <img src="/images/headshot-scaled.png" alt="Headshot">
+<div class="row row-odd">
+  <div class="page">
+    <div class="columns">
+      <div class="second-column sidebar">
+        <div class="sidebar-container">
+          <h2>Developer</h2>
+          <div class="headshot-image-wrapper">
+            <div class="image">
+              <img src="/images/headshot-scaled.png" alt="Headshot">
+            </div>
+            <p class="image-label">Darrell Sandstrom</p>
+          </div>
+
+          <p>
+            Ten+ years of experience writing software mostly for web apps. Specialized in Ruby
+            backend, however proficient in CSS and JavaScript.
+          </p>
         </div>
-        <p class="image-label">Darrell Sandstrom</p>
       </div>
 
-      <p>
-        Ten+ years of experience writing software mostly for web apps. Specialized in Ruby
-        backend, however proficient in CSS and JavaScript.
-      </p>
+      <div class="first-column">
+        <h2>Backstory</h2>
+        <p>
+          While working as an engineer for a marketing firm, one of my responsibilities was
+          selecting and setting up issue tracking and task management software. I tried and
+          used many options and eventually settled on <strong>Jira</strong>. I setup the configurations for the
+          company including custom workflows, user management, and the issue/question portal.
+          It's decent software, however, it's overly complicated and difficult to debug. I
+          wanted to make something better and <strong>open source</strong>. So I've spent much
+          time contemplating what I like best about the software I've used and ported that
+          into <strong>TaskRoller</strong>. In addition, I copied the workflow that I setup
+          and hard-wired that into my App.
+        </p>
+
+        <p>
+          A major difference with Jira, besides being free and open source, is the workflows
+          are not customizable. The App uses the <strong>"Convention over
+          Configuration"</strong> approach. I feel like the workflows I've used for Issues and
+          Tasks fit for most companies that write software. However, I'm open to improvements
+          and the App is not feature
+          complete. Yet I use tried and tested Ruby gems including
+          <a href="https://github.com/heartcombo/devise" target="_remote">Devise</a>
+          for authentication and
+          <a href="https://github.com/coorasse/cancancan" target="_remote">CanCanCan</a>
+          for authorization. In addition, I use
+          <a href="https://www.postgresql.org/" target="_remote">PostgreSQL</a>
+          for the database and
+          <a href="https://github.com/puma/puma" target="_remote">Puma</a>
+           for the web server. The App is fully tested by me and has a full suite of RSpec tests
+           to ensure reliability and allow future refactoring.
+        </p>
+      </div>
     </div>
-  </div>
-
-  <div class="first-column">
-    <h2>Backstory</h2>
-    <p>
-      While working as an engineer for a marketing firm, one of my responsibilities was
-      selecting and setting up issue tracking and task management software. I tried and
-      used many options and eventually settled on <strong>Jira</strong>. I setup the configurations for the
-      company including custom workflows, user management, and the issue/question portal.
-      It's decent software, however, it's overly complicated and difficult to debug. I
-      wanted to make something better and <strong>open source</strong>. So I've spent much
-      time contemplating what I like best about the software I've used and ported that
-      into <strong>TaskRoller</strong>. In addition, I copied the workflow that I setup
-      and hard-wired that into my App.
-    </p>
-
-    <p>
-      A major difference with Jira, besides being free and open source, is the workflows
-      are not customizable. The App uses the <strong>"Convention over
-      Configuration"</strong> approach. I feel like the workflows I've used for Issues and
-      Tasks fit for most companies that write software. However, I'm open to improvements
-      and the App is not feature
-      complete. Yet I use tried and tested Ruby gems including
-      <a href="https://github.com/heartcombo/devise" target="_remote">Devise</a>
-      for authentication and
-      <a href="https://github.com/coorasse/cancancan" target="_remote">CanCanCan</a>
-      for authorization. In addition, I use
-      <a href="https://www.postgresql.org/" target="_remote">PostgreSQL</a>
-      for the database and
-      <a href="https://github.com/puma/puma" target="_remote">Puma</a>
-       for the web server. The App is fully tested by me and has a full suite of RSpec tests
-       to ensure reliability and allow future refactoring.
-    </p>
   </div>
 </div>
