@@ -10,7 +10,10 @@
       </p>
     </div>
 
-    <%= erb :_menu %>
+    <%= menu [["Features", "/features"],
+              ["Workflows", "/workflows"],
+              ["About", "/about"],
+              ["Contact", "/contact"]] %>
   </div>
 </div>
 
@@ -18,6 +21,14 @@
   <div class="page-header">
     <div class="page">
       <%= yield_content :page_header %>
+    </div>
+  </div>
+<% end %>
+
+<% if content_for? :page_nav %>
+  <div id="page-nav" class="page-nav-wrapper">
+    <div class="page">
+      <%= yield_content :page_nav %>
     </div>
   </div>
 <% end %>

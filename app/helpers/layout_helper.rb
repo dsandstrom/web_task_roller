@@ -15,27 +15,14 @@ module LayoutHelper
     "#{MAIN_TITLE} | #{@title}"
   end
 
-  def nav_link(title, path, path_regex = nil)
-    css_class =
-      if (!path_regex.nil? && path_regex.match?(request.path)) ||
-         request.path == path
-        "current-page"
-      end
-
-    "<a class='#{css_class}' href='#{path}'>#{title}</a>"
+  def menu(links)
+    nav(links, "menu")
   end
 
-  def nav(links, css_class = "page-nav")
-    nav_links =
-      links.map do |title, path, path_regex|
-        nav_link(title, path, path_regex)
-      end
-
-    <<~HTML
-      <p class="#{css_class}">
-        #{nav_links.join("\n")}
-      </p>
-    HTML
+  def page_nav(links)
+    content_for :page_nav do
+      nav(links, "page-nav")
+    end
   end
 
   def icon(name)
@@ -78,6 +65,29 @@ module LayoutHelper
   end
 
   private
+
+    def nav_link(title, path, path_regex = nil)
+      css_class =
+        if (!path_regex.nil? && path_regex.match?(request.path)) ||
+           request.path == path
+          "current-page"
+        end
+
+      "<a class='#{css_class}' href='#{path}'>#{title}</a>"
+    end
+
+    def nav(links, css_class)
+      nav_links =
+        links.map do |title, path, path_regex|
+          nav_link(title, path, path_regex)
+        end
+
+      <<~HTML
+        <p class="#{css_class}">
+          #{nav_links.join("\n")}
+        </p>
+      HTML
+    end
 
     def titleize(word)
       word = word.gsub(/[-_]/, " ")
