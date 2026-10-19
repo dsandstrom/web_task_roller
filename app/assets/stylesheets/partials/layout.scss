@@ -137,6 +137,10 @@ a {
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
+
+    &.top-bar-page {
+      justify-content: space-between;
+    }
   }
 
   .app-name-and-logo {
