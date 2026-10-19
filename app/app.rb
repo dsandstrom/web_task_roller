@@ -54,7 +54,7 @@ class WebTaskRoller < Sinatra::Application
   post "/contact" do
     @email_message = EmailMessage.new(contact_message_params)
 
-    if prevent_delivery? || @email_message.deliver?
+    if @email_message.valid? && (prevent_delivery? || @email_message.deliver?)
       redirect "/contact/success"
     else
       erb :contact
