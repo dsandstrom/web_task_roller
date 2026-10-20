@@ -15,7 +15,6 @@ a {
 
 .body-main {
   flex-grow: 1;
-  padding-top: 2rem;
 }
 
 .top-bar {
@@ -35,37 +34,59 @@ a {
 }
 
 .page-header {
-  padding: 1rem 0 0;
+  margin: 1rem 0;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page-nav-wrapper {
   border-bottom: 2px solid $light-gray;
+  background: $white;
 
-  .page-nav {
-    display: flex;
-    margin: 2rem 0 -2px;
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.4);
+  }
+}
 
-    a {
-      display: block;
-      padding: 0 1rem;
-      border-bottom: 2px solid transparent;
-      color: $dark-gray;
-      font-size: 1.2rem;
-      font-weight: bold;
-      line-height: 3;
-      text-transform: uppercase;
-      white-space: nowrap;
+.page-nav {
+  display: flex;
+  margin: 0 0 -2px;
 
-      &.current-page {
-        border-color: $color-quinary;
-        color: $color-quinary;
-        cursor: text;
-      }
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
+
+  a {
+    display: block;
+    padding: 0 1rem;
+    border-bottom: 2px solid transparent;
+    color: $dark-gray;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 3;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &.current-page {
+      border-color: $color-quinary;
+      color: $color-quinary;
+      cursor: text;
     }
+  }
 
-    a:not(.current-page) {
-      &:hover,
-      &:focus {
-        border-color: $color-secondary;
-        color: $color-secondary;
-      }
+  a:not(.current-page) {
+    &:hover,
+    &:focus {
+      border-color: $color-secondary;
+      color: $color-secondary;
     }
   }
 }
