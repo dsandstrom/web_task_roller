@@ -11,9 +11,9 @@
 <% page_nav [["Issue Status", "/workflows#issue-workflow"],
              ["Task Status", "/workflows#task-workflow"]] %>
 
-<div class="row row-odd">
+<div id="issue-workflow" class="row row-odd">
   <div class="page">
-    <h2 id="issue-workflow">Issue Status</h2>
+    <h2>Issue Status</h2>
 
     <%= erb :_workflows_issue %>
 
@@ -21,9 +21,9 @@
   </div>
 </div>
 
-<div class="row row-even">
+<div id="task-workflow" class="row row-even">
   <div class="page">
-    <h2 id="task-workflow">Task Status</h2>
+    <h2>Task Status</h2>
 
     <%= erb :_workflows_task %>
 
