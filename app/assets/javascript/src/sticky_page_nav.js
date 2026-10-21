@@ -9,14 +9,26 @@ export class StickyPageNav {
     this.height = this.nav.offsetHeight;
     if (!this.parentElem || !this.top || !this.height) return;
 
-    this.hideTopLinks();
     this.watchScroll();
+    this.setupTopLink();
   }
 
   hideTopLinks() {
     for (const topLink of this.main.querySelectorAll('.top-link-wrapper')) {
       topLink.classList.add('hide');
     }
+  }
+
+  setupTopLink() {
+    this.hideTopLinks();
+
+    const topLink = this.nav.querySelector('.top-link-wrapper a');
+    if (!topLink) return;
+
+    topLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 
   watchScroll() {
