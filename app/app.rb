@@ -52,7 +52,7 @@ class WebTaskRoller < Sinatra::Application
     if @email_message.valid? && (prevent_delivery? || @email_message.deliver?)
       redirect "/contact/success"
     else
-      erb :contact
+      erb :about
     end
   rescue Errno::ECONNREFUSED, KeyError => e
     logger.info "Contact form has invalid configs: #{e}"
