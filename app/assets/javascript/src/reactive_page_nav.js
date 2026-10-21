@@ -1,5 +1,5 @@
 // FIXME: not quite working when scrolling from bottom
-// TODO: add top link
+
 export class ReactivePageNav {
   constructor(nav) {
     this.elem = nav;

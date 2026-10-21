@@ -1,16 +1,26 @@
 export class StickyPageNav {
-  constructor(nav) {
-    this.elem = nav;
-    this.parentElem = nav.parentElement;
-    this.top = window.scrollY + this.elem.getBoundingClientRect().top;
-    this.height = this.elem.offsetHeight;
-    if (!this.elem || !this.parentElem || !this.height) return;
+  constructor(nav, main) {
+    this.nav = nav;
+    this.main = main;
+    if (!this.nav || !this.main) return;
 
+    this.parentElem = this.nav.parentElement;
+    this.top = window.scrollY + this.nav.getBoundingClientRect().top;
+    this.height = this.nav.offsetHeight;
+    if (!this.parentElem || !this.top || !this.height) return;
+
+    this.hideTopLinks();
     this.watchScroll();
   }
 
+  hideTopLinks() {
+    for (const topLink of this.main.querySelectorAll('.top-link-wrapper')) {
+      topLink.classList.add('hide');
+    }
+  }
+
   watchScroll() {
-    const elem = this.elem;
+    const elem = this.nav;
     const parentElem = this.parentElem;
     const top = this.top;
     const height = this.height;

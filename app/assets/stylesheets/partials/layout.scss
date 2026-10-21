@@ -52,6 +52,23 @@ a {
     width: 100%;
     z-index: 1;
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.4);
+
+    .top-link-wrapper {
+      visibility: visible;
+    }
+  }
+
+  > .page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .top-link-wrapper {
+    visibility: hidden;
+    margin: 0;
+    font-size: .9em;
   }
 }
 
@@ -310,6 +327,10 @@ a {
 .top-link-wrapper {
   display: flex;
   justify-content: flex-end;
+
+  &.hide {
+    display: none;
+  }
 
   a {
     display: flex;
