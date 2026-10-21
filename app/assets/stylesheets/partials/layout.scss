@@ -4,7 +4,7 @@ body {
   height: 100%;
   min-height: 100vh;
   margin: 0;
-  background: $white;
+  background: $background-color;
 }
 
 a {
@@ -20,7 +20,7 @@ a {
 .top-bar {
   padding: 1rem 0;
   background: $color-quaternary;
-  color: $ink;
+  color: $text-color;
 }
 
 .row {
@@ -28,8 +28,8 @@ a {
 }
 
 .row-even {
-  background: $off-white;
-  border: 1px solid $light-gray;
+  background: $background-offset-color;
+  border: 1px solid $border-color;
   border-width: 1px 0;
 }
 
@@ -43,8 +43,8 @@ a {
 }
 
 .page-nav-wrapper {
-  border-bottom: 2px solid $light-gray;
-  background: $white;
+  border-bottom: 2px solid $border-color;
+  background: $background-color;
 
   &.sticky {
     position: fixed;
@@ -155,7 +155,7 @@ a {
   font-weight: bold;
 
   a {
-    color: $gray;
+    color: $color-tertiary;
 
     &:hover,
     &:focus {
@@ -297,7 +297,7 @@ a {
   .sidebar-container {
     padding: 1.5rem;
     border: 1px solid $border-color;
-    background-color: $off-white;
+    background-color: $background-offset-color;
 
     h2 {
       margin-top: 0;
