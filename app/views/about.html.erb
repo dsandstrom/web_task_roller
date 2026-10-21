@@ -26,36 +26,7 @@
       </div>
 
       <div class="first-column">
-        <h2>Backstory</h2>
-        <p>
-          While working as an engineer for a marketing firm, one of my responsibilities was
-          selecting and setting up issue tracking and task management software. I tried and
-          used many options and eventually settled on <strong>Jira</strong>. I setup the configurations for the
-          company including custom workflows, user management, and the issue/question portal.
-          It's decent software, however, it's overly complicated and difficult to debug. I
-          wanted to make something better and <strong>open source</strong>. So I've spent much
-          time contemplating what I like best about the software I've used and ported that
-          into <strong>TaskRoller</strong>. In addition, I copied the workflow that I setup
-          and hard-wired that into my App.
-        </p>
-
-        <p>
-          A major difference with Jira, besides being free and open source, is the workflows
-          are not customizable. The App uses the <strong>"Convention over
-          Configuration"</strong> approach. I feel like the workflows I've used for Issues and
-          Tasks fit for most companies that write software. However, I'm open to improvements
-          and the App is not feature
-          complete. Yet I use tried and tested Ruby gems including
-          <a href="https://github.com/heartcombo/devise" target="_remote">Devise</a>
-          for authentication and
-          <a href="https://github.com/coorasse/cancancan" target="_remote">CanCanCan</a>
-          for authorization. In addition, I use
-          <a href="https://www.postgresql.org/" target="_remote">PostgreSQL</a>
-          for the database and
-          <a href="https://github.com/puma/puma" target="_remote">Puma</a>
-           for the web server. The App is fully tested by me and has a full suite of RSpec tests
-           to ensure reliability and allow future refactoring.
-        </p>
+        <%= erb :_about_backstory %>
       </div>
     </div>
   </div>
@@ -77,51 +48,7 @@
       </section>
 
       <div class="first-column">
-        <%= form_errors @email_message %>
-        <form id="contact-form" class="contact-form" name="contact_form" action="/contact"
-              method="post" novalidate>
-          <input type="hidden" name="contact[loaded_at]" id="contact_loaded_at"
-                 value="<%= Time.now.utc %>">
-          <div class="field">
-            <div class="field-label-and-message">
-              <label for="contact[name]">Your Name</label>
-              <span class=field-message></span>
-            </div>
-            <input type="text" name="contact[name]" id="contact_name"
-                   value="<%= @email_message.name %>">
-          </div>
-
-          <div class="field hide">
-            <div class="field-label-and-message">
-              <label for="contact[title]">Title</label>
-              <span class=field-message></span>
-            </div>
-            <input type="text" name="contact[title]" id="contact_title"
-                   tabindex="-1" autocomplete="off" aria-hidden="true"
-                   value="<%= @email_message.title %>">
-          </div>
-
-          <div class="field">
-            <div class="field-label-and-message">
-              <label for="contact[return_email]">Your Email</label>
-              <span class=field-message></span>
-            </div>
-            <input type="email" name="contact[return_email]" id="contact_return_email"
-                   value="<%= @email_message.return_email %>">
-          </div>
-
-          <div class="field">
-            <div class="field-label-and-message">
-              <label for="contact[body]">Question or Comment</label>
-              <span class=field-message></span>
-            </div>
-            <textarea name="contact[body]" id="contact_body"><%= @email_message.body %></textarea>
-          </div>
-
-          <div class="actions">
-            <input type="submit" value="Send Email">
-          </div>
-        </form>
+        <%= erb :_contact_form %>
       </div>
     </div>
   </div>

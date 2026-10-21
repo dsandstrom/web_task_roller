@@ -35,10 +35,16 @@ class WebTaskRoller < Sinatra::Application
   end
 
   get "/about" do
-    # TODO: add captcha if neccessary https://www.hcaptcha.com/
     @title = "About"
     @email_message = EmailMessage.new
     erb :about
+  end
+
+  get "/contact" do
+    # TODO: add captcha if neccessary https://www.hcaptcha.com/
+    @title = "Contact"
+    @email_message = EmailMessage.new
+    erb :contact
   end
 
   get "/contact/success" do
@@ -52,7 +58,7 @@ class WebTaskRoller < Sinatra::Application
     if @email_message.valid? && (prevent_delivery? || @email_message.deliver?)
       redirect "/contact/success"
     else
-      erb :about
+      erb :contact
     end
   rescue Errno::ECONNREFUSED, KeyError => e
     logger.info "Contact form has invalid configs: #{e}"

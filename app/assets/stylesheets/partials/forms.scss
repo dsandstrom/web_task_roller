@@ -8,6 +8,14 @@ form {
   }
 }
 
+.center-column {
+  form {
+    padding: 2rem;
+    border: 1px solid $border-color;
+    background: $background-offset-color;
+  }
+}
+
 // stylelint-disable selector-no-qualifying-type
 input[type='email'],
 input[type='number'],

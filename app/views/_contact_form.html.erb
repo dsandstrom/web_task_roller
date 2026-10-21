@@ -1,0 +1,45 @@
+<%= form_errors @email_message %>
+<form id="contact-form" class="contact-form" name="contact_form" action="/contact"
+      method="post" novalidate>
+  <input type="hidden" name="contact[loaded_at]" id="contact_loaded_at"
+         value="<%= Time.now.utc %>">
+  <div class="field">
+    <div class="field-label-and-message">
+      <label for="contact[name]">Your Name</label>
+      <span class=field-message></span>
+    </div>
+    <input type="text" name="contact[name]" id="contact_name"
+           value="<%= @email_message.name %>">
+  </div>
+
+  <div class="field hide">
+    <div class="field-label-and-message">
+      <label for="contact[title]">Title</label>
+      <span class=field-message></span>
+    </div>
+    <input type="text" name="contact[title]" id="contact_title"
+           tabindex="-1" autocomplete="off" aria-hidden="true"
+           value="<%= @email_message.title %>">
+  </div>
+
+  <div class="field">
+    <div class="field-label-and-message">
+      <label for="contact[return_email]">Your Email</label>
+      <span class=field-message></span>
+    </div>
+    <input type="email" name="contact[return_email]" id="contact_return_email"
+           value="<%= @email_message.return_email %>">
+  </div>
+
+  <div class="field">
+    <div class="field-label-and-message">
+      <label for="contact[body]">Question or Comment</label>
+      <span class=field-message></span>
+    </div>
+    <textarea name="contact[body]" id="contact_body"><%= @email_message.body %></textarea>
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Send Email">
+  </div>
+</form>

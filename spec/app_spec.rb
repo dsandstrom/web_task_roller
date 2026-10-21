@@ -33,6 +33,13 @@ RSpec.describe WebTaskRoller do
     end
   end
 
+  describe "GET /contact" do
+    it "returns 200" do
+      get "/contact"
+      expect(last_response).to be_ok
+    end
+  end
+
   describe "POST /contact" do
     let(:mail) { double(:mail, "[]=": nil, delivery_method: nil, deliver: nil) }
 
