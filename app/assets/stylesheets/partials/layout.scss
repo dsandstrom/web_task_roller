@@ -31,6 +31,10 @@ a {
   border: 1px solid $border-color;
   border-width: 1px 0;
   background: $background-offset-color;
+
+  h2 {
+    color: $dark-gray;
+  }
 }
 
 .page-header {
@@ -272,6 +276,11 @@ a {
       &.sidebar {
         flex: 0 0 30rem;
         margin: 0.5rem 0 0 2.5rem;
+
+        .sidebar-container {
+          padding-left: 2.5rem;
+          border-left: 1px solid $border-color;
+        }
       }
     }
 
@@ -291,17 +300,6 @@ a {
       > .column {
         flex: 0 1 auto;
       }
-    }
-  }
-
-  .sidebar-container {
-    padding: 1.5rem;
-    border: 1px solid $border-color;
-    background-color: $background-offset-color;
-
-    h2 {
-      margin-top: 0;
-      color: $color-quinary;
     }
   }
 }
