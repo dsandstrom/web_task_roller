@@ -1,43 +1,56 @@
-<h3 class="h3-image-heading">
-  <img src="/images/github-logo.svg" alt="GitHub">
-</h3>
+<div class="center-column">
+  <p>
+    When connected to a GitHub repository, you can take advantage of several
+    <strong>automations</strong>. Simply add a Applications Integration to the repo owner's
+    GitHub account, then copy the generated API key to an environment variable of your
+    TaskRoller app.
+  </p>
+</div>
 
-<p>
-  When connected to a GitHub repository, you can take advantage of several
-  <strong>automations</strong>. Simply add a Applications Integration to the repo owner's
-  GitHub account, then copy the generated API key to an environment variable of your
-  TaskRoller app.
-</p>
+<div class="columns">
+  <div class="half-column">
+    <dl class="integration-list">
+      <dt>Issue Import</dt>
+      <dd>
+        Issues added to GitHub are sent to your TaskRoller instance and updated with automatic
+        comments when the status is changed. In addition, the GitHub Issue is closed after the
+        App's Issue is closed. If the GitHub user has an App account with the same
+        email address, the Issue is associated with them. Conversely, a new user is added to
+        the App which could allow them to later log in.
+      </dd>
+    </dl>
+  </div>
 
-<dl class="integration-list">
-  <dt>Issue Import</dt>
-  <dd>
-    Issues added to GitHub are sent to your TaskRoller instance and updated with automatic
-    comments when the status is changed. In addition, the GitHub Issue is closed after the
-    App's Issue is closed. If the GitHub user has an App account with the same
-    email address, the Issue is associated with them. Conversely, a new user is added to
-    the App which could allow them to later log in.
-
+  <div class="half-column">
     <div class="image-wrapper">
       <img src="/images/screenshot-github-integration-import.png" alt="Import Example">
+      <p class="image-label">Issue Imported from GitHub</p>
     </div>
-  </dd>
+  </div>
+</div>
 
-  <dt>Commit Message Callouts</dt>
-  <dd>
-    Tasks can be transitioned automatically just by adding a <strong>callout</strong> to
-    the repo's commit message, like <code>"Fixes Task#112"</code>. The only requirement is
-    users must connect their GitHub account to the app in their "Account Settings". Here
-    are the possible state changes:
+<div class="columns">
+  <div class="half-column">
+    <dl class="integration-list">
+      <dt>Commit Message Callouts</dt>
+      <dd>
+        Tasks can be transitioned automatically just by adding a <strong>callout</strong> to
+        the repo's commit message, like <code>"Fixes Task#112"</code>. The only requirement is
+        users must connect their GitHub account to the app in their "Account Settings". Here
+        are the possible state changes:
 
-    <ul>
-      <li><strong class="color-green">Start/Progress</strong> <%= icon('arrow-right') %> Start working on Task</li>
-      <li><strong class="color-yellow">Pause</strong> <%= icon('arrow-right') %> Pause working on Task</li>
-      <li><strong class="color-red">Fix/Close/Complete</strong> <%= icon('arrow-right') %> Mark Task is ready for review</li>
-    </ul>
-
+        <ul>
+          <li><strong class="color-green">Start/Progress</strong> <%= icon('arrow-right') %> Start working on Task</li>
+          <li><strong class="color-yellow">Pause</strong> <%= icon('arrow-right') %> Pause working on Task</li>
+          <li><strong class="color-red">Fix/Close/Complete</strong> <%= icon('arrow-right') %> Mark Task is ready for review</li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+  <div class="half-column">
     <div class="image-wrapper">
       <img src="/images/screenshot-github-integration-callout.png" alt="Callout Example">
+      <p class="image-label">Commit Message</p>
     </div>
-  </dd>
-</dl>
+  </div>
+</div>
