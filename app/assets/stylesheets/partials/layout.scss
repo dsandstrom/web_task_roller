@@ -29,14 +29,40 @@ a {
   text-align: center;
 }
 
+.image-and-label {
+  margin-bottom: 2.5rem;
+
+  .image-wrapper {
+    margin: 0;
+  }
+}
+
 .row {
   padding: 1.5rem 0 2rem;
+}
+
+.row-odd,
+.row-even {
+  .image-and-label {
+    .image-label {
+      margin: 0;
+      padding: 1rem;
+    }
+  }
 }
 
 .row-odd {
   .image-wrapper {
     background: $background-offset-color;
     border: 1px solid $border-color;
+  }
+
+  .image-and-label {
+    .image-label {
+      background: $white;
+      border: 0 solid $border-color;
+      border-width: 0 1px 1px;
+    }
   }
 }
 
@@ -52,6 +78,14 @@ a {
   .image-wrapper {
     background: $light-gray;
     border: 1px solid $gray;
+  }
+
+  .image-and-label {
+    .image-label {
+      background: $off-white;
+      border: 0 solid $gray;
+      border-width: 0 1px 1px;
+    }
   }
 }
 
@@ -368,9 +402,6 @@ a {
 .after-image {
   max-width: 70rem;
   margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid $gray;
-  background: $light-gray;
 }
 
 .headshot-image-wrapper {
