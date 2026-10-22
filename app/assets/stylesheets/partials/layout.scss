@@ -309,6 +309,12 @@ a {
     }
   }
 
+  .grid-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+
   .body-footer {
     .columns {
       justify-content: space-between;
