@@ -251,7 +251,7 @@ a {
 }
 
 .center-column {
-  max-width: 65rem;
+  max-width: 75rem;
   margin: 0 auto;
 }
 
@@ -315,16 +315,63 @@ a {
   text-align: center;
 }
 
+.before-after-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0 2.5rem;
+
+  .icon-wrapper {
+    margin: 1rem;
+  }
+
+  i {
+    display: flex;
+    align-items: center;
+    font-size: 5rem;
+    color: $color-quinary;
+
+    &.icon-arrow-right {
+      display: none;
+    }
+  }
+}
+
+@include breakpoints.gt-small {
+  .before-after-images {
+    flex-direction: row;
+
+    i {
+      &.icon-arrow-right {
+        display: flex;
+      }
+
+      &.icon-arrow-down {
+        display: none;
+      }
+    }
+  }
+}
+
+.before-image,
+.after-image {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid $gray;
+  background: $light-gray;
+}
+
 .headshot-image-wrapper {
   max-width: 300px;
   margin: 0 auto 2rem;
+}
 
-  .image-label {
-    margin: 0;
-    font-family: $heading-font;
-    font-weight: bold;
-    line-height: 1.3;
-  }
+.image-label {
+  margin: 0;
+  font-family: $heading-font;
+  font-weight: bold;
+  line-height: 1.3;
 }
 
 .top-link-wrapper {
