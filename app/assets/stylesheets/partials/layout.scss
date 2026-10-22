@@ -400,3 +400,17 @@ a {
     line-height: 1.2;
   }
 }
+
+.heading-and-icon {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+
+  i {
+    position: relative;
+    bottom: -3px;
+    font-size: 2.8rem;
+    color: $color-quinary;
+    line-height: 1;
+  }
+}
