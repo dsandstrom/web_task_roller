@@ -23,8 +23,48 @@ a {
   color: $text-color;
 }
 
+.image-wrapper {
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.image-and-label {
+  max-width: 60rem;
+  margin: 0 auto 2.5rem;
+
+  .image-wrapper {
+    margin: 0;
+  }
+}
+
 .row {
   padding: 1.5rem 0 2rem;
+}
+
+.row-odd,
+.row-even {
+  .image-and-label {
+    .image-label {
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+}
+
+.row-odd {
+  .image-wrapper {
+    border: 1px solid $border-color;
+    background: $background-offset-color;
+  }
+
+  .image-and-label {
+    .image-label {
+      border: 0 solid $border-color;
+      border-width: 0 1px 1px;
+      background: $white;
+    }
+  }
 }
 
 .row-even {
@@ -34,6 +74,19 @@ a {
 
   h2 {
     color: $dark-gray;
+  }
+
+  .image-wrapper {
+    border: 1px solid $gray;
+    background: $light-gray;
+  }
+
+  .image-and-label {
+    .image-label {
+      border: 0 solid $gray;
+      border-width: 0 1px 1px;
+      background: $off-white;
+    }
   }
 }
 
@@ -251,22 +304,15 @@ a {
 }
 
 .center-column {
-  max-width: 65rem;
-  margin: 0 auto;
+  max-width: 75rem;
+  margin: 0 auto 3rem;
 }
 
 @include breakpoints.gt-small {
   .columns {
     display: flex;
     margin: 0 -0.5rem;
-
-    > .first-column,
-    > .second-column,
-    > .half-column,
-    > .column {
-      border: 0 solid transparent;
-      border-width: 0 0.5rem;
-    }
+    gap: 2.5rem;
 
     > .first-column {
       flex: 1 1 auto;
@@ -274,7 +320,7 @@ a {
     }
 
     > .second-column {
-      flex: 0 0 45rem;
+      flex: 0 0 40rem;
       order: 2;
       margin-top: 0;
 
@@ -296,6 +342,16 @@ a {
     > .column {
       flex: 0 1 72rem;
     }
+
+    &.bottom-align {
+      align-items: flex-end;
+    }
+  }
+
+  .grid-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
   }
 
   .body-footer {
@@ -309,22 +365,61 @@ a {
   }
 }
 
-.image-wrapper {
-  margin-bottom: 2.5rem;
-  padding: 1rem;
-  text-align: center;
+.before-after-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 2.5rem;
+
+  .icon-wrapper {
+    margin: 1rem;
+  }
+
+  i {
+    display: flex;
+    align-items: center;
+    color: $color-quinary;
+    font-size: 5rem;
+
+    &.icon-arrow-right {
+      display: none;
+    }
+  }
+}
+
+@include breakpoints.gt-small {
+  .before-after-images {
+    flex-direction: row;
+
+    i {
+      &.icon-arrow-right {
+        display: flex;
+      }
+
+      &.icon-arrow-down {
+        display: none;
+      }
+    }
+  }
+}
+
+.before-image,
+.after-image {
+  max-width: 70rem;
+  margin: 0 auto;
 }
 
 .headshot-image-wrapper {
   max-width: 300px;
   margin: 0 auto 2rem;
+}
 
-  .image-label {
-    margin: 0;
-    font-family: $heading-font;
-    font-weight: bold;
-    line-height: 1.3;
-  }
+.image-label {
+  margin: 0;
+  font-family: $heading-font;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
 }
 
 .top-link-wrapper {
@@ -339,5 +434,19 @@ a {
     display: flex;
     gap: 1px;
     line-height: 1.2;
+  }
+}
+
+.heading-and-icon {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+
+  i {
+    position: relative;
+    bottom: -3px;
+    color: $color-quinary;
+    font-size: 2.8rem;
+    line-height: 1;
   }
 }
