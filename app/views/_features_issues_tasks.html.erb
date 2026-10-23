@@ -1,68 +1,121 @@
-<p>
-  The main components of the App are <strong>Issues</strong> and <strong>Tasks</strong>.
-  Issues are similar to GitHub issues. Anyone with access can use them to report bugs,
-  suggest improvements, or ask a question. On the other hand, tasks can only be created by
-  <strong>Reviewers</strong> or <strong>Admins</strong>. Often times, they are created
-  from an Issue. They lay out specific instructions on how to fix the Issues' bugs or
-  complete new features. Tasks can also be added independently.
-</p>
+<div class="center-column">
+  <p>
+    The main components of the App are <strong>Issues</strong> and <strong>Tasks</strong>.
+    Issues are similar to GitHub issues. Anyone with access can use them to report bugs,
+    suggest improvements, or ask a question. On the other hand, tasks can only be created by
+    <strong>Reviewers</strong> or <strong>Admins</strong>. Often times, they are created
+    from an Issue. They lay out specific instructions on how to fix the Issues' bugs or
+    complete new features. Tasks can also be added independently.
+  </p>
+</div>
 
-<div class="image-wrapper">
-  <img src="/images/screenshot-issues-tasks.png" alt="Issues and Tasks Example">
+<div class="columns bottom-align">
+  <div class="half-column">
+    <div class="image-and-label">
+      <div class="image-wrapper">
+        <img src="/images/screenshot-issues-tasks.png" alt="Issues and Tasks Example">
+      </div>
+      <p class="image-label">Issue/Task List</p>
+    </div>
+  </div>
+
+  <div class="half-column">
+    <div class="image-and-label">
+      <div class="image-wrapper">
+        <img src="/images/screenshot-issue.png" alt="Issue Example">
+      </div>
+      <p class="image-label">Issue Page</p>
+    </div>
+  </div>
 </div>
 
 <h3>Type Configuration</h3>
-<p>
-  Issues and Tasks are grouped by <strong>types</strong> (eg. Bug, Feature Request,
-  Question). There are several color and icon options available that can be used in order
-  to customize their tags:
-</p>
+<div class="columns">
+  <div class="first-column">
+    <p>
+      Issues and Tasks are grouped by <strong>types</strong> (eg. Bug, Feature Request,
+      Question). There are several color and icon options available that can be used in order
+      to customize their tags:
+    </p>
+  </div>
 
-<h4>Color and Icon Options</h4>
-<div class="issue-tags">
-  <%= type_color_options %>
+  <div class="second-column">
+    <div class="issue-tags">
+      <%= type_color_options %>
+    </div>
+    <h4>Color Options</h4>
+  </div>
 </div>
 
-<h4>Icon Options</h4>
-<div class="issue-tags">
-  <%= type_icon_options %>
+<div class="columns">
+  <div class="first-column">
+    <div class="issue-tags">
+      <%= type_icon_options %>
+    </div>
+    <h4>Icon Options</h4>
+  </div>
 </div>
 
-<h3>Categories and Projects</h3>
-<p>
-  Issues and Tasks are added to <strong>Projects</strong>, which are added to
-  <strong>Categories</strong>. Each can be set as <strong>Internal</strong> which hides
-  the Category/Project and it's underlying Issues and Tasks from
-  <strong>Reporters</strong>. In addition, each can be set as <strong>Archived</strong>.
-  This hides the Category/Project from <strong>Workers</strong> and
-  <strong>Reporters</strong> and prevents new Issues/Tasks from being created within or
-  even worked on.
-</p>
+<div class="columns">
+  <div class="first-column">
+    <h3>Categories and Projects</h3>
+    <p>
+      Issues and Tasks are added to <strong>Projects</strong>, which are added to
+      <strong>Categories</strong>. Each can be set as <strong>Internal</strong> which hides
+      the Category/Project and it's underlying Issues and Tasks from
+      <strong>Reporters</strong>. In addition, each can be set as <strong>Archived</strong>.
+      This hides the Category/Project from <strong>Workers</strong> and
+      <strong>Reporters</strong> and prevents new Issues/Tasks from being created within or
+      even worked on.
+    </p>
+  </div>
 
-<div class="image-wrapper">
-  <img src="/images/screenshot-category.png" alt="Issues and Tasks Example">
+  <div class="second-column">
+    <div class="image-and-label">
+      <div class="image-wrapper">
+        <img src="/images/screenshot-category.png" alt="Category and Projects Example">
+      </div>
+      <p class="image-label">Category Page</p>
+    </div>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="first-column">
+    <h3>Subscriptions</h3>
+    <p>
+      Issues and Tasks can be subscribed to. Afterwords, users will receive notifications
+      when the status changes or comments are added. Furthermore, users can auto-subscribe to
+      Issues and Tasks based on search filters (eg. Project, Issue/Task Type, Status, User).
+    </p>
+  </div>
+
+  <div class="second-column">
+    <div class="image-and-label">
+      <div class="image-wrapper">
+        <img src="/images/screenshot-saved-searches.png" alt="Saved Search Example">
+      </div>
+      <p class="image-label">Subscription Filters</p>
+    </div>
+  </div>
 </div>
 
 <h3>Priority Levels</h3>
-<p>
-  Tasks have a priority level assigned to them that indicate the importance of the bug
-  fix, improvement, or new feature. The options are 1 to 4. Here is the quick guide
-  of the levels and how they can be used:
-</p>
-<ol>
-  <li><strong class="color-red">Critical</strong> - Most likely tied to a bug that effects many users or clients</li>
-  <li><strong class="color-yellow">High</strong> - An important bug fix or new improvement</li>
-  <li><strong class="color-purple">Medium</strong> - A new feature or improvement</li>
-  <li><strong class="color-blue">Low</strong> - A new feature or improvement that can wait</li>
-</ol>
+<div class="columns">
+  <div class="half-column">
+    <p>
+      Tasks have a priority level assigned to them that indicate the importance of the bug
+      fix, improvement, or new feature. The options are 1 to 4. Here is the quick guide
+      of the levels and how they can be used:
+    </p>
+  </div>
 
-<h3>Subscriptions</h3>
-<p>
-  Issues and Tasks can be subscribed to. Afterwords, users will receive notifications
-  when the status changes or comments are added. Furthermore, users can auto-subscribe to
-  Issues and Tasks based on search filters (eg. Project, Issue/Task Type, Status, User).
-</p>
-
-<div class="image-wrapper">
-  <img src="/images/screenshot-saved-searches.png" alt="Saved Search Example">
+  <div class="half-column">
+    <ol>
+      <li><strong class="color-red">Critical</strong> - Most likely tied to a bug that effects many users or clients</li>
+      <li><strong class="color-yellow">High</strong> - An important bug fix or new improvement</li>
+      <li><strong class="color-purple">Medium</strong> - A new feature or improvement</li>
+      <li><strong class="color-blue">Low</strong> - A new feature or improvement that can wait</li>
+    </ol>
+  </div>
 </div>

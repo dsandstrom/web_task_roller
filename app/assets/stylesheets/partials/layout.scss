@@ -319,7 +319,7 @@ a {
     }
 
     > .second-column {
-      flex: 0 0 45rem;
+      flex: 0 0 40rem;
       order: 2;
       margin-top: 0;
 
@@ -340,6 +340,10 @@ a {
 
     > .column {
       flex: 0 1 72rem;
+    }
+
+    &.bottom-align {
+      align-items: flex-end;
     }
   }
 
