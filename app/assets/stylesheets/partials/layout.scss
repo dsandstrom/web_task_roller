@@ -30,7 +30,8 @@ a {
 }
 
 .image-and-label {
-  margin-bottom: 2.5rem;
+  max-width: 60rem;
+  margin: 0 auto 2.5rem;
 
   .image-wrapper {
     margin: 0;
