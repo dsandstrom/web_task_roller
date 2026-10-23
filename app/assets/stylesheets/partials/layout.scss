@@ -53,15 +53,15 @@ a {
 
 .row-odd {
   .image-wrapper {
-    background: $background-offset-color;
     border: 1px solid $border-color;
+    background: $background-offset-color;
   }
 
   .image-and-label {
     .image-label {
-      background: $white;
       border: 0 solid $border-color;
       border-width: 0 1px 1px;
+      background: $white;
     }
   }
 }
@@ -76,15 +76,15 @@ a {
   }
 
   .image-wrapper {
-    background: $light-gray;
     border: 1px solid $gray;
+    background: $light-gray;
   }
 
   .image-and-label {
     .image-label {
-      background: $off-white;
       border: 0 solid $gray;
       border-width: 0 1px 1px;
+      background: $off-white;
     }
   }
 }
@@ -377,8 +377,8 @@ a {
   i {
     display: flex;
     align-items: center;
-    font-size: 5rem;
     color: $color-quinary;
+    font-size: 5rem;
 
     &.icon-arrow-right {
       display: none;
@@ -444,8 +444,8 @@ a {
   i {
     position: relative;
     bottom: -3px;
-    font-size: 2.8rem;
     color: $color-quinary;
+    font-size: 2.8rem;
     line-height: 1;
   }
 }
