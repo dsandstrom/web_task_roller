@@ -2,6 +2,8 @@
 
 module LayoutHelper
   MAIN_TITLE = "Task Roller App"
+  MENU_LINKS = [["Features", "/features"], ["Workflows", "/workflows"],
+                ["About", "/about"]].freeze
 
   TAG_ICONS =
     %w[backspace bug bulb calendar cart fireball flask fork-repo gear globe
@@ -15,8 +17,8 @@ module LayoutHelper
     "#{MAIN_TITLE} | #{@title}"
   end
 
-  def menu(links)
-    nav(links, "menu")
+  def menu
+    nav(MENU_LINKS, "menu")
   end
 
   def page_nav(links)

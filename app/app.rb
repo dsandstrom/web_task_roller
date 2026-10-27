@@ -21,7 +21,7 @@ class WebTaskRoller < Sinatra::Application
   helpers LayoutHelper, FormsHelper
 
   get "/" do
-    erb :index
+    erb :index, layout: false
   end
 
   get "/workflows" do

@@ -1,8 +1,19 @@
-<% content_for :page_header do %>
-  <h1>Task Roller App</h1>
-<% end %>
-
-<div class="row row-odd">
-  <div class="page">
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= erb :_head %>
+</head>
+<body>
+  <header class="body-header">
+    <%= erb :_index_header %>
+  </header>
+  <main id="body_main" class="body-main">
+    <%= erb :_index_main %>
+  </main>
+  <footer class="body-footer">
+    <div class="page">
+      <%= erb :_footer %>
+    </div>
+  </footer>
+</body>
+</html>

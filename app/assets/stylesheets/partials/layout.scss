@@ -40,6 +40,10 @@ a {
 
 .row {
   padding: 1.5rem 0 2rem;
+
+  &.expanded-row {
+    padding: 5rem 0 3.5rem;
+  }
 }
 
 .row-odd,
@@ -96,6 +100,11 @@ a {
   h1 {
     margin: 2rem 0 1rem;
     padding: 0;
+    white-space: nowrap;
+  }
+
+  .columns {
+    align-items: last baseline;
   }
 }
 
@@ -223,11 +232,11 @@ a {
 
 .app-logo {
   width: 3rem;
-  height: 3rem;
+  height: auto;
   margin-bottom: 0;
 }
 
-@include breakpoints.gt-medium {
+@include breakpoints.gt-small {
   .top-bar > .page {
     display: flex;
     align-items: baseline;
@@ -244,7 +253,6 @@ a {
 
   .app-logo {
     width: 2.5rem;
-    height: 2.5rem;
     margin: 0 2rem 0 0;
   }
 }
@@ -448,5 +456,125 @@ a {
     color: $color-quinary;
     font-size: 2.8rem;
     line-height: 1;
+  }
+}
+
+.index-header {
+  background: $color-quaternary;
+  text-align: center;
+  padding: 4rem 0;
+
+  .app-logo {
+    margin: 0 auto 2.5rem;
+    width: 7rem;
+    height: auto;
+  }
+
+  .menu {
+    margin: 4rem 0 0;
+  }
+
+  .app-slogan {
+    color: $color-tertiary;
+    font-family: $code-font;
+  }
+
+  h1 {
+    margin: 1.5rem 0 3rem;
+    font-size: 6rem;
+    line-height: 1;
+  }
+}
+
+
+@include breakpoints.gt-small {
+  .index-header {
+    padding: 6rem 0;
+
+    .app-logo {
+      width: 12rem;
+    }
+
+    .menu {
+      margin-top: 6rem;
+    }
+
+    h1 {
+      margin: 4rem 0 5rem;
+      font-size: 10rem;
+    }
+  }
+}
+
+$large-link-color: $color-quinary;
+
+.large-links {
+  display: flex;
+  margin: 0 auto 4rem;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: $heading-font;
+  text-transform: uppercase;
+
+  a {
+    border: 2px solid $border-color;
+    border-radius: 2 * $border-radius;
+    padding: 2rem;
+    background: $off-white;
+
+    &:link,
+    &:visited {
+      color: $large-link-color;
+    }
+
+    &:hover,
+    &:active {
+      border-color: $color-secondary;
+      color: $color-secondary;
+
+      i {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .logo-wrapper {
+    width: 10rem;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10rem;
+      line-height: 1;
+      color: $large-link-color;
+    }
+  }
+}
+
+@include breakpoints.gt-small {
+  .large-links {
+    gap: 6rem;
+
+    .logo-wrapper {
+      width: 20rem;
+
+      i {
+        font-size: 20rem;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+    }
   }
 }
