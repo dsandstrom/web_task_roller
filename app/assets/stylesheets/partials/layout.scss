@@ -460,14 +460,14 @@ a {
 }
 
 .index-header {
+  padding: 4rem 0;
   background: $color-quaternary;
   text-align: center;
-  padding: 4rem 0;
 
   .app-logo {
-    margin: 0 auto 2.5rem;
     width: 7rem;
     height: auto;
+    margin: 0 auto 2.5rem;
   }
 
   .menu {
@@ -510,18 +510,18 @@ $large-link-color: $color-quinary;
 
 .large-links {
   display: flex;
-  margin: 0 auto 4rem;
-  gap: 1.5rem;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  margin: 0 auto 4rem;
   font-family: $heading-font;
+  text-align: center;
   text-transform: uppercase;
+  gap: 1.5rem;
 
   a {
+    padding: 2rem;
     border: 2px solid $border-color;
     border-radius: 2 * $border-radius;
-    padding: 2rem;
     background: $off-white;
 
     &:link,
@@ -554,9 +554,9 @@ $large-link-color: $color-quinary;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: $large-link-color;
       font-size: 10rem;
       line-height: 1;
-      color: $large-link-color;
     }
   }
 }
