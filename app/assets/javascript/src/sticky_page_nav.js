@@ -9,6 +9,7 @@ export class StickyPageNav {
     this.height = this.nav.offsetHeight;
     if (!this.parentElem || !this.top || !this.height) return;
 
+    this.initialize();
     this.watchScroll();
     this.setupTopLink();
   }
@@ -31,20 +32,34 @@ export class StickyPageNav {
     });
   }
 
-  watchScroll() {
+  toggle(elem, parentElem, top, height) {
+    if (window.pageYOffset > top) {
+      elem.classList.add('sticky');
+      parentElem.style.marginTop = height + 'px';
+    } else {
+      elem.classList.remove('sticky');
+      parentElem.style.marginTop = 0;
+    }
+  }
+
+  initialize() {
     const elem = this.nav;
     const parentElem = this.parentElem;
     const top = this.top;
     const height = this.height;
 
+    this.toggle(elem, parentElem, top, height);
+  }
+
+  watchScroll() {
+    const elem = this.nav;
+    const parentElem = this.parentElem;
+    const top = this.top;
+    const height = this.height;
+    const toggle = this.toggle;
+
     document.addEventListener('scroll', function(){
-      if (window.pageYOffset > top) {
-        elem.classList.add('sticky');
-        parentElem.style.marginTop = height + 'px';
-      } else {
-        elem.classList.remove('sticky');
-        parentElem.style.marginTop = 0;
-      }
+      toggle(elem, parentElem, top, height);
     });
   }
 };
