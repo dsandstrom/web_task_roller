@@ -1,114 +1,9 @@
 <section class="row row-even expanded-row">
-  <div class="page">
-    <div class="center-column">
-      <p class="large-text">
-        Free and open source web application for <span>issue and task</span> management
-      </p>
-
-      <p class="medium-text">
-        The backend is
-        <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>
-        and uses
-        <a href="https://docs.ruby-lang.org/en/master/ERB.html" target="_blank">ERB</a>,
-        <a href="https://sass-lang.com/" target="_blank">SCSS</a> compiled to CSS, and
-        vanilla
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>.
-        In addition, it uses
-        <a href="https://turbo.hotwired.dev/" target="_blank">Turbo</a> to make HTTP
-        requests quicker.
-      </p>
-    </div>
-
-    <div class="large-links">
-      <a href="https://github.com/dsandstrom/task_roller" target="_blank">
-        <div class="logo-wrapper">
-          <%= icon("fork-repo") %>
-        </div>
-        <p>Source Code</p>
-      </a>
-
-      <a href="https://production.task-roller.net" target="_blank">
-        <div class="logo-wrapper">
-          <%= icon("globe") %>
-        </div>
-        <p>App in Action</p>
-      </a>
-    </div>
-  </div>
+  <%= erb :_index_hero %>
 </section>
 
 <section class="row row-odd expanded-row">
-  <div class="page">
-    <div class="feature-highlights">
-      <div class="feature-highlight">
-        <div class="feature-highlight-pair">
-          <h3 class="feature-highlight-title">Open Source</h3>
-          <p class=feature-highlight-description>
-            Code is available on
-            <a href="https://github.com/dsandstrom/task_roller" target="_blank">GitHub</a>.
-            Bug reports and feature requests are welcome.
-          </p>
-        </div>
-        <span class="feature-highlight-icon"><%= icon("code") %></span>
-      </div>
-
-      <div class="feature-highlight">
-        <div class="feature-highlight-pair">
-          <h3 class="feature-highlight-title">Customizable Type Tags</h3>
-          <p class=feature-highlight-description>
-            Editible names and options to provide organization control.
-          </p>
-        </div>
-        <span class="feature-highlight-icon"><%= icon("options") %></span>
-      </div>
-
-      <div class="feature-highlight">
-        <div class="feature-highlight-pair">
-          <h3 class="feature-highlight-title">User Levels</h3>
-          <p class=feature-highlight-description>
-            Four levels of user authorization allows separation of duties.
-          </p>
-        </div>
-        <span class="feature-highlight-icon"><%= icon("person-group") %></span>
-      </div>
-
-      <div class="feature-highlight">
-        <div class="feature-highlight-pair">
-          <h3 class="feature-highlight-title">GitHub Integrations</h3>
-          <p class=feature-highlight-description>
-            Repo connection to support automatic import of issues and commit message
-            callouts to progress App tasks.
-          </p>
-        </div>
-        <span class="feature-highlight-icon"><%= icon("fork-repo") %></span>
-      </div>
-
-      <div class="feature-highlight">
-        <div class="feature-highlight-pair">
-          <h3 class="feature-highlight-title">Markdown Editors</h3>
-          <p class=feature-highlight-description>
-            Text entry allows users to utilize HTML tags while being easy and intuitive.
-          </p>
-        </div>
-        <span class="feature-highlight-icon"><%= icon("quote") %></span>
-      </div>
-
-      <div class="feature-highlight">
-        <div class="feature-highlight-pair">
-          <h3 class="feature-highlight-title">Secure and Fully Tested</h3>
-          <p class=feature-highlight-description>
-            Uses popular Ruby gems for auth, has a full suite of backend specs, and used in
-            utilizes dogfooding.
-          </p>
-        </div>
-        <span class="feature-highlight-icon"><%= icon("ribbon") %></span>
-      </div>
-    </div>
-
-    <p class="center-text">
-      <a href="/features" class="button no-margin">View Features</a>
-    </p>
-  </div>
+  <%= erb :_index_highlights %>
 </section>
 
 <section class="row row-even">
@@ -117,7 +12,7 @@
   <div class="center-column">
     <p>
       The App can be deployed to your own server or to an application platform (PaaS) like
-      <a href="https://www.heroku.com/" target="_blank">Heroku</a>. More over, there is a
+      <a href="https://www.heroku.com/" target="_blank">Heroku</a>. Moreover, there is a
       <a href="https://docs.docker.com/reference/dockerfile/" target="_blank">Dockerfile</a>
       available to make deployment more agnostic. Instructions on how to deploy
       and initially set up your instance are on
