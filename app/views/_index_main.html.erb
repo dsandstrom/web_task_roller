@@ -11,7 +11,7 @@
         uses <a href="https://sass-lang.com/" target="_blank">SCSS</a> compiled to CSS and
         vanilla
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>.
-        It also uses
+        In addition, it uses
         <a href="https://turbo.hotwired.dev/" target="_blank">Turbo</a> to make HTTP
         requests quicker.
       </p>
@@ -37,42 +37,58 @@
 
 <section class="row row-odd">
   <div class="page">
-    <div class="center-column">
-      <h2>Feature Highlights</h2>
+    <h2>Feature Highlights</h2>
 
-      <p>
-        View the
-        <a href="/features">Features</a> page to explore them in more detail, however here
-        are the main highlights:
-      </p>
+    <p class="center-text">
+      View the
+      <a href="/features">Features</a> page to explore them in more detail, however here
+      are the main highlights:
+    </p>
 
-      <dl class="feature-highlights-list">
+    <div class="feature-highlights-wrapper">
+      <dl>
         <dt><%= icon("code") %> Open Source</dt>
         <dd>
           Code is available on
           <a href="https://github.com/dsandstrom/task_roller" target="_blank">GitHub</a>.
           Bug reports and feature requests are welcome.
         </dd>
+      </dl>
 
-        <dt><%= icon("gear") %> Customizable issue/task types</dt>
+      <dl>
+        <dt><%= icon("options") %> Customizable Type Tags</dt>
         <dd>
-          Names and options for tags to provide control of organization.
+          Editible names and options to provide control of organization.
         </dd>
+      </dl>
 
-        <dt><%= icon("person-group") %> User levels</dt>
+      <dl>
+        <dt><%= icon("person-group") %> User Levels</dt>
         <dd>
           Four levels of user authorization allows separation of duties.
         </dd>
+      </dl>
 
+      <dl>
         <dt><%= icon("fork-repo") %> GitHub Integrations</dt>
         <dd>
-          Can be connected to a repo to support automatic import of issues. In addition,
-          callouts in commit comments can be used to progress App tasks.
+          Repo connection to support automatic import of issues and commit message
+          callouts to progress App tasks.
         </dd>
+      </dl>
 
+      <dl>
         <dt><%= icon("quote") %> Markdown Editors</dt>
         <dd>
           Text entry allows users to utilize HTML tags while being easy and intuitive.
+        </dd>
+      </dl>
+
+      <dl>
+        <dt><%= icon("ribbon") %> Secure and Fully Tested</dt>
+        <dd>
+          Uses popular Ruby gems for auth, has a full suite of backend specs, and used in
+          utilizes dogfooding.
         </dd>
       </dl>
     </div>

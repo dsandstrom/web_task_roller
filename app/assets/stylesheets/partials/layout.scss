@@ -579,8 +579,27 @@ $large-link-color: $color-quaternary;
   }
 }
 
-.feature-highlights-list {
+.feature-highlights-wrapper {
+  dt,
   i {
     color: $color-quinary;
+  }
+
+  dt {
+    font-size: 120%;
+  }
+}
+
+@include breakpoints.gt-small {
+  .feature-highlights-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@include breakpoints.gt-medium {
+  .feature-highlights-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
