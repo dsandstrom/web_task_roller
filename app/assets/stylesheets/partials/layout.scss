@@ -603,9 +603,22 @@ $large-link-color: $color-quaternary;
   margin: 0 0 1rem;
 }
 
-.feature-highlight-icon {
+.feature-highlight-icon,
+.feature-highlight-svg {
   order: 1;
   font-size: 3rem;
+}
+
+.feature-highlight-svg {
+  width: 30px;
+  height: auto;
+  flex-shrink: 0;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+    fill: $color-quinary;
+  }
 }
 
 .feature-highlight-description {
