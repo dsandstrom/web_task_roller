@@ -506,7 +506,7 @@ a {
   }
 }
 
-$large-link-color: $color-quinary;
+$large-link-color: $color-quaternary;
 
 .large-links {
   display: flex;
@@ -520,9 +520,8 @@ $large-link-color: $color-quinary;
 
   a {
     padding: 2rem;
-    border: 2px solid $border-color;
-    border-radius: 2 * $border-radius;
-    background: $off-white;
+    border: 3px solid $large-link-color;
+    border-radius: 3 * $border-radius;
 
     &:link,
     &:visited {
@@ -532,6 +531,7 @@ $large-link-color: $color-quinary;
     &:hover,
     &:active {
       border-color: $color-secondary;
+      background: $light-gray;
       color: $color-secondary;
 
       i {
