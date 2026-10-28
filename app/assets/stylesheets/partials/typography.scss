@@ -171,3 +171,9 @@ code {
 .center-text {
   text-align: center;
 }
+
+.button {
+  &.no-margin {
+    margin-bottom: 0;
+  }
+}
