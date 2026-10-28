@@ -610,9 +610,9 @@ $large-link-color: $color-quaternary;
 }
 
 .feature-highlight-svg {
+  flex-shrink: 0;
   width: 30px;
   height: auto;
-  flex-shrink: 0;
 
   svg {
     max-width: 100%;
